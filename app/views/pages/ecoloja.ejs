@@ -16,11 +16,25 @@
     <p class="eco_loja">
       <b class="eco">ECO</b><b class="loja">LOJA</b>
     </p>
-    <section class="fases">
-      <img src="imagens/entradaa.svg" alt="Imagem 1" class="zoom">
-      <img src="imagens/INTER.svg" alt="Imagem 2" class="zoom">
-      <img src="imagens/ITENSAVANÇADOS.png.png" alt="Imagem 3" class="zoom">
+    <section class="fases" aria-label="Galeria de imagens" role="region" aria-roledescription="carousel">
+     
+
+      <ul class="carousel-track" aria-live="polite">
+        <li class="carousel-slide current">
+          <img src="imagens/entradaa.svg" alt="Entrada da loja" class="carousel-img">
+        </li>
+        <li class="carousel-slide">
+          <img src="imagens/INTER.svg" alt="Imagem institucional" class="carousel-img">
+        </li>
+        <li class="carousel-slide">
+          <img src="imagens/ITENSAVANÇADOS.png.png" alt="Itens avançados" class="carousel-img">
+        </li>
+      </ul>
+
+      
+      <ol class="carousel-nav" aria-hidden="false"></ol>
     </section>
+    <script src="/js/carousel.js" defer></script>
     <section aria-labelledby="produtos-destaque">
       <h2 id="produtos-destaque">Economia de energia</h2>
       <section class="produtos-grid">
@@ -38,12 +52,12 @@
   <%- include("../partials/footer") %>
 </body>
     </html>
-  
-  
 
 
 
 
 
-   
+
+
+
 

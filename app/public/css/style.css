@@ -118,9 +118,9 @@ h2 {
 /* Grid de produtos */
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  padding: 0 3px;
+  grid-template-columns: repeat(2, 1fr); /* mobile-first: 2 colunas em telas pequenas */
+  gap: 12px;
+  padding: 0 8px;
 }
 
 .produtos-grid article {
@@ -130,9 +130,19 @@ h2 {
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
+/* Ajuste para telas maiores */
+@media (min-width: 700px) {
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    padding: 0 3px;
+  }
+}
 
 .produtos-grid img {
   width: 100%;
