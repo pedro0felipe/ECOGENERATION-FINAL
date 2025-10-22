@@ -27,6 +27,9 @@ router.get("/avancado", function (req, res) {
     res.render("avancado", {titulo:"avançado"})
 });
 
+router.get("/cadastro", function (req, res) {
+    res.render("cadastro", {titulo:"avançado"})
+});
 router.get('/', (req, res) => {
     res.redirect('/login');
 });
