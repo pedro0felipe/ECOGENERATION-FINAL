@@ -1,4 +1,3 @@
-
 .conteudo {
   flex: 1;
   padding: 20px;
@@ -7,7 +6,10 @@
 }
 
 .fases{
-  
+  position: relative;
+  overflow: hidden;
+  padding: 12px 0;
+  background: transparent;
 }
   body {
   font-family: Arial, sans-serif;
@@ -114,4 +116,124 @@ h4 {
   text-align: center;
 }
 
+/* Carousel (mobile-first) */
 
+/* track as list (flex row) */
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+/* cada slide ocupa 100% da área visível (um por vez) */
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+/* imagem responsiva */
+.carousel-img {
+  display: block;
+  width: 92%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* botões */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.06);
+  border: none;
+  padding: 8px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+
+  z-index: 1000;           /* ficar acima do track/imagens */
+  pointer-events: auto;    /* garantir que receba eventos */
+}
+.carousel-btn--left { left: 8px; }
+.carousel-btn--right { right: 8px; }
+
+/* indicadores */
+.carousel-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 8px 0 0 0;
+  margin: 0;
+}
+.carousel-nav button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  padding: 0;
+  cursor: pointer;
+}
+.carousel-nav button.is-selected { background: #4aa64a; }
+
+/* desktop: mostrar maior imagem */
+@media (min-width: 700px) {
+  .carousel-img { max-width: 700px; }
+  .carousel-slide { padding: 18px; }
+  .carousel-btn { padding: 10px 14px; font-size: 26px; }
+}
+
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%; /* Cada slide ocupa 100% da largura do carrossel */
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button--left {
+    left: 10px;
+}
+
+.carousel-button--right {
+    right: 10px;
+}
+
+/* Estilo para as setas */
+.carousel-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #000; /* Cor das setas */
+}

@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro</title>
+  <!-- Semantic UI CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" >
+  <link rel="stylesheet" href="css/login.css" >
+</header>
 <body>
-    
-    <main>
-        <section aria-labelledby="login-title" class="login-container">
-          <img src="/img/GENERATION (1).svg">
-            <% if (errors.length > 0) { %>
-                <section class="error-container" aria-label="Mensagens de erro">
-                    <% errors.forEach(error => { %>
-                        <p class="error"><%= error.msg %></p>
-                    <% }) %>
-                </section>
-            <% } %>
-            <form action="/login" method="POST" novalidate>
-                <fieldset class="form-group">
-                   
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" value="<%= formData.email || '' %>" required
-                           placeholder="Digite seu e-mail">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required
-                           placeholder="Digite sua senha">
-                </fieldset>
-                <button type="submit">Entrar</button>
-            </form>
-        </section>
-    </main>
+  <body class="layout">
+<header>
+      <img src="imagem/GENERATION(1).svg" alt="Logo do Site" class="logo">
+    </header>
+</body>
+  <main>
+    <h1 class="ui header">Login</h1> 
+    <form action="/login" method="post" class="ui form" id="login-form">
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value="<%= old.email ? old.email : '' %>"
+        placeholder="Digite seu e-mail"
+      />
+      <% if (errors.email) { %>
+      <section class="ui pointing red basic label"><%= errors.email.msg %></section>
+      <% } %>
+
+      <label for="senha">Senha</label>
+      <input
+        type="password"
+        id="senha"
+        name="senha"
+        placeholder="Digite sua senha"
+      />
+      <% if (errors.senha) { %>
+      <section class="ui pointing red basic label"><%= errors.senha.msg %></section>
+      <% } %>
+
+      <button class="ui primary button" type="submit">Enviar</button>
+      <button class="ui button" type="reset">Limpar</button>
+
+    </form>
+     <p class="signup-link">
+        Não tem uma conta? <a href="/cadastro">Faça o cadastro</a>
+    </p>
+  </main>
+<footer> 2025-Ecogeneration </footer>
+  <script src="/js/validation.js"></script>
+  <!-- Semantic UI JS CDN -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
 </body>
 </html>

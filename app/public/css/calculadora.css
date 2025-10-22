@@ -1,4 +1,3 @@
-
 .eco-card {
 
   max-width: 650px; /* Card mais largo */
@@ -62,4 +61,101 @@
 .outracor{
   color: #a0d995
 
+}
+
+/* estilos simples e responsivos para a calculadora */
+.eco-main {
+  padding: 12px;
+}
+
+.eco-calculator-section {
+  max-width: 820px;
+  margin: 0 auto 18px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.eco-calculator-section h1 {
+  margin: 0 0 6px;
+  color: #0b8945;
+  font-size: 1.3rem;
+}
+
+.eco-desc {
+  margin: 0 0 12px;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.calc-form fieldset {
+  border: 1px solid #eef3ee;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.calc-form label {
+  display: block;
+  font-size: 0.9rem;
+  margin: 8px 0 4px;
+  color: #333;
+}
+
+.calc-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d9e6d9;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  justify-content: flex-start;
+}
+
+.eco-btn {
+  background: #2f9e44;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.eco-btn--muted {
+  background: #e9f5ec;
+  color: #2f9e44;
+  border: 1px solid #d7eed8;
+}
+
+.calc-results {
+  margin-top: 14px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.calc-results h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+/* desktop */
+@media (min-width: 700px) {
+  .form-actions {
+    justify-content: flex-end;
+  }
+  .eco-calculator-section {
+    padding: 20px;
+  }
+  .eco-calculator-section h1 { font-size: 1.6rem; }
 }

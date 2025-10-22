@@ -1,0 +1,172 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+}
+
+/* Header com fundo verde e logo centralizada */
+header {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-height: 50px;
+  height: auto;
+}
+
+/* Centraliza o título do formulário */
+.titulo-centralizado {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2.5rem !important;
+}
+
+
+/* Centraliza os inputs, selects e botões do formulário principal */
+#cadastro-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente os campos */
+}
+
+#cadastro-form input,
+#cadastro-form select,
+#cadastro-form textarea,
+#cadastro-form button {
+  width: 300px; /* largura fixa */
+  max-width: 90vw; /* responsividade */
+  margin-bottom: 15px;
+}
+
+/* Labels alinhados à esquerda, alinhados com os campos */
+#cadastro-form label {
+  align-self: flex-start;
+  margin-left: calc(50% - 150px); /* para alinhar com input de 300px */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Mensagens de erro exibidas via atributo data-error no label (sem div) */
+#cadastro-form label[data-error]:not([data-error=""])::after {
+  content: attr(data-error);
+  display: block;
+  color: #9f3a38;
+  font-size: 0.95em;
+  margin-top: 0.25rem;
+  max-width: 300px;
+  text-align: left;
+  align-self: center;
+}
+
+/* Mensagens de erro alinhadas igual os labels */
+#cadastro-form section.ui.pointing.red.basic.label {
+  max-width: 300px;
+  margin-left: -191px;
+  margin-bottom: 15px;
+}
+
+/* Estado visual do input inválido */
+#cadastro-form input.invalid,
+#cadastro-form input[aria-invalid="true"] {
+  border-color: #9f3a38;
+  box-shadow: 0 0 0 1px rgba(159,58,56,0.12);
+}
+
+/* Ajuste para que labels continuem alinhados */
+#cadastro-form label {
+  /* ...existing rules kept... */
+}
+
+/* Ajuste nos botões para espaçamento */
+button {
+  margin-top: 1rem;
+  margin-right: 0; /* remove espaçamento horizontal */
+  display: block;
+  width: 300px;
+  align-self: center;
+}
+
+/* Container para empilhar botões na vertical e centralizar */
+#cadastro-form .botoes {
+  display: flex;
+  flex-direction: column; /* empilha verticalmente */
+  align-items: center;    /* centraliza horizontalmente */
+  gap: 0.75rem;           /* espaço entre botões */
+  width: 100%;
+}
+
+/* Estilo específico para botões dentro do container .botoes */
+#cadastro-form .botoes button {
+  margin: 0;              /* já controlado pelo gap do flex */
+  width: 300px;           /* mantém largura consistente */
+}
+
+/* Forçar empilhar botões dentro do formulário sem alterar o HTML */
+#cadastro-form button {
+  display: block !important;
+  width: 300px;
+  margin: 0.5rem auto !important; /* centraliza horizontalmente e cria espaçamento vertical */
+}
+
+/* Caso haja grupos de botões (ex.: .buttons ou Semantic UI .ui.buttons), forçar coluna */
+#cadastro-form .buttons,
+#cadastro-form .ui.buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+header {
+    background-color: #A0D995; /* Fundo verde */
+    text-align: center; /* Alinha o conteúdo (logo) ao centro */
+    padding: 20px 0; /* Espaçamento em cima e embaixo */
+}
+
+.logo {
+  max-width: 400px; /* Tamanho máximo para a logo */
+  height: auto;     /* Mantém a proporção */
+}
+
+  footer {
+    text-align: center;
+    background-color: #A0D995;
+    padding: 1em 0;
+
+  }
+
+  body.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Faz o conteúdo crescer e empurra o rodapé para o final */
+  main {
+    flex: 1;
+  }
+
+  #cadastro-form input,
+#cadastro-form select {
+  height: 3em;         /* aumenta a altura */
+  font-size: 1.1em;     /* aumenta o tamanho da fonte */
+  padding: 0.5em;       /* aumenta o espaço interno */
+}
+
+#cadastro-form button {
+  height: 3em;
+  font-size: 1.1em;
+}
+
+
+

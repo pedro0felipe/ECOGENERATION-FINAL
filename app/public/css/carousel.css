@@ -1,0 +1,25 @@
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%; /* Cada slide ocupa 100% da largura do carrossel */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-nav button {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
