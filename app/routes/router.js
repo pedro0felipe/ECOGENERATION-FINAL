@@ -27,6 +27,14 @@ router.get("/avancado", function (req, res) {
     res.render("avancado", {titulo:"avançado"})
 });
 
+router.get("/lampada", function (req, res) {
+    res.render("lampada", {titulo:"lampada"})
+});
+
+router.get("/carregador", function (req, res) {
+    res.render("carregador", {titulo:"carregador"})
+});
+
 router.get("/cadastro", function (req, res) {
     res.render("cadastro", {titulo:"avançado"})
 });
