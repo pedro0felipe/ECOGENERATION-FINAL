@@ -102,9 +102,46 @@ img {
 
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 4000px;               /* aumenta espaçamento horizontal e vertical */
+  padding: 400px 20000px;      /* mais padding ao redor da grid */
+  max-width: 1300px;
+  margin: 0 auto;          /* centraliza a grid na página */
+  justify-items: center;
+}
+.produtos-grid article {
+  width: 100%;
+  max-width: 320px;        /* controla a largura dos cards */
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin: 0;               /* remove margens duplicadas */
+}
+
+
+.produtos-grid article figure {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.produtos-grid img {
+  width: auto;
+  max-width: 160px;
+  height: auto;
+  border: 1px solid #eee;
   padding: 10px;
+  background: #fff;
+}
+
+.produto-preco {
+  margin: 12px 0;
+  color: #007b45;
+  font-weight: 600;
 }
 
 h2 {

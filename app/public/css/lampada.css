@@ -98,8 +98,8 @@ body {
   }
   
   .produtos-relacionados {
-    width: 90%;
-    margin: 0 auto 30px;
+    width: 50%;
+    margin: 0 auto 5px;
     display: flex;
     justify-content: center; /* centralizado */
     gap: 20px;
@@ -195,3 +195,29 @@ body {
     font-size: 14px;
   }
   
+ @media screen and (max-width: 768px) {
+  .anuncio {
+    width: 100%;
+    margin: 15px auto;
+  }
+  
+  .anuncio tr {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .anuncio td {
+    width: 100% !important; /* sobrescreve o width inline */
+    display: block;
+  }
+  
+  .info {
+    text-align: center;
+  }
+  
+  .produto {
+    width: 80%;
+    margin: 0 auto 20px;
+    display: block;
+  }
+}

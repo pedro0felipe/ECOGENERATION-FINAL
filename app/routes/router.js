@@ -13,6 +13,7 @@ router.get("/calculadora-perguntas", function (req, res) {
     res.render("calculadora-perguntas", { titulo: "EcoCalculadora" });
 });
 
+
 router.get("/ecoloja", function (req, res) {
     res.render("ecoloja", {titulo:"tela inicial da ecoloja"})
 });
@@ -29,6 +30,10 @@ router.get("/avancado", function (req, res) {
 
 router.get("/lampada", function (req, res) {
     res.render("lampada", {titulo:"lampada"})
+});
+
+router.get("/miniventilador", function (req, res) {
+    res.render("miniventilador", {titulo:"ventilador"})
 });
 
 router.get("/carregador", function (req, res) {

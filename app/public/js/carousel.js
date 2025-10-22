@@ -31,9 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Rotação automática a cada 3 segundos
-    setInterval(() => {
+     setInterval(() => {
         const currentSlide = track.querySelector('.current');
         const nextSlide = currentSlide.nextElementSibling || slides[0];
         moveToSlide(currentSlide, nextSlide);
-    }, 3000);
+    }, 6000);
+
 });

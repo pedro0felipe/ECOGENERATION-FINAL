@@ -46,6 +46,11 @@
   margin-right: 5px;
 }
 
+.btn-comprar {
+
+  text-decoration: none;
+
+}
 .loja {
   color: #455B40;
 }
@@ -82,25 +87,26 @@ h4 {
 }
 
 
+/* Aumenta espaçamento vertical entre linhas do grid (row-gap) sem alterar muito o gap horizontal */
 .produtos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  justify-items: center;
+  /* gap: <row-gap> <column-gap> */
+  gap: 52px 36px;    /* 52px entre linhas, 36px entre colunas */
+  row-gap: 52px;     /* redundante para compatibilidade */
+  margin-top: 20px;  /* opcional: afasta a grid do header */
 }
 
+/* Garante que cada card comece no topo da "célula" do grid */
 .produtos-grid article {
-  text-align: center;
+  align-self: start;
 }
 
 .produtos-grid img {
   width: 100%;
   max-width: 220px;
   height: auto;
-  border: 1px solid #ddd;
+
   padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
   transition: transform 0.2s ease;
 }
 
