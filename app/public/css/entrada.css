@@ -1,0 +1,188 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+  }
+  h2 {
+    
+    display: flex;
+    color: #000;
+    justify-content:last baseline
+  }
+  /* Header */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #a0d995;
+    padding: 20px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .search-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    min-width: 200px;
+    font-size: 1rem;
+  }
+  
+  .search-form button {
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .search-form button:hover {
+    background-color: #45a049;
+  }
+
+ .eco_loja {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+
+.eco_loja {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+
+.eco {
+  color: #0B89D6;
+  margin-right: 5px;
+}
+
+.loja {
+  color: #455B40;
+}
+
+img {
+  display: block;
+  margin: 30px auto; /* centraliza e espaça em cima e embaixo */
+  max-width: 90%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+h2 {
+  margin-bottom: 30px;
+  text-align: left;
+}
+h4 {
+  font-size: 2rem; /* aumenta o tamanho */
+  font-weight: bold; /* deixa mais forte, opcional */
+  text-align: left; /* opcional, se quiser centralizar */
+  margin: 30px 0; /* espaço acima e abaixo */
+}
+
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.produtos-grid article {
+  text-align: center;
+}
+
+.produtos-grid img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.produtos-grid img:hover {
+  transform: scale(1.05);
+}
+
+.produtos-grid article h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Estilos gerais do conteúdo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que a altura da página ocupe toda a tela */
+}
+
+.conteudo {
+  flex: 1; /* Faz o conteúdo ocupar todo o espaço disponível, empurrando o rodapé para baixo */
+  padding: 20px;
+}
+
+footer {
+  background-color: #a0d995;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px; /* Espaço entre o conteúdo e o rodapé */
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+

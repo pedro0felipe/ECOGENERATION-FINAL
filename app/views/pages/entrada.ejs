@@ -4,66 +4,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/ecoloja.css">
+  <link rel="stylesheet" href="css/style.css">
   
 </head>
 
+
+<%- include("../partials/header") %>
 <body>
   
 
-<%- include("../partials/header") %>
 
-<p class="eco_loja">
-  <b class="eco">ECO</b><b class="loja">LOJA</b>
-</p>
-<section aria-labelledby="produtos-destaque">
-  <h2 id="produtos-destaque"></h2>
 
-  <section class="produtos-grid">
-    <article>
-      <img src="carregadoraluzsolar.png" alt="Carregador a luz Solar">
-      <h3>Carregador a Luz Solar</h3>
-    </article>
+<section class="produtos-grid" role="list" aria-label="Produtos para economia de energia">
+        <article class="produto-card" role="listitem">
+          <figure>
+            <img src="imagens/lampadaled.png" alt="Lâmpada LED" class="produto-img">
+            <figcaption class="visually-hidden">Lâmpada LED</figcaption>
+          </figure>
+          <h3>Lâmpada LED</h3>
+          <p class="produto-preco">R$ 19,90</p>
+          <a class="btn-comprar" href="/produto/lampada-led" role="button">Comprar</a>
+        </article>
 
-    <article>
-      <img src="luminariasolar.png" alt="Luminária Solar">
-      <h3>Luminária Solar LED de Parede</h3>
-    </article>
+        <article class="produto-card" role="listitem">
+          <figure>
+            <img src="imagens/powerbankportatil.png" alt="Carregador USB solar" class="produto-img">
+            <figcaption class="visually-hidden">Carregador USB solar</figcaption>
+          </figure>
+          <h3>Carregador USB</h3>
+          <p class="produto-preco">R$ 89,90</p>
+          <a class="btn-comprar" href="/produto/carregador-usb" role="button">Comprar</a>
+        </article>
 
-    <article>
-      <img src="kitenergiasolarportatil.png" alt="Kit Energia Solar">
-      <h3>Kit Energia Solar</h3>
-    </article>
+        <article class="produto-card" role="listitem">
+          <figure>
+            <img src="imagens/luminariasolar.png" alt="Luminária Solar" class="produto-img">
+            <figcaption class="visually-hidden">Luminária Solar</figcaption>
+          </figure>
+          <h3>Luminária Solar</h3>
+          <p class="produto-preco">R$ 149,90</p>
+          <a class="btn-comprar" href="/produto/luminaria-solar" role="button">Comprar</a>
+        </article>
 
-    <article>
-      <img src="Luminariasolarledparede.png" alt="Luminaria Solae LED Parede">
-      <h3>Luminaria Solae LED Parede</h3>
-    </article>
-    
-  </section>
+        <article class="produto-card" role="listitem">
+          <figure>
+            <img src="imagens/minipainel.png" alt="Mini Painel Solar" class="produto-img">
+            <figcaption class="visually-hidden">Mini Painel Solar</figcaption>
+          </figure>
+          <h3>Painel Solar (pequeno)</h3>
+          <p class="produto-preco">R$ 249,90</p>
+          <a class="btn-comprar" href="/produto/painel-solar" role="button">Comprar</a>
+        </article>
+      </section>
 
-  <section aria-labelledby="Autonomia">
-    <h4 id="Autonomia"></h4>
-    
-    <section class="produtos-grid">
-      <article>
-        <img src="lampadaledcomenergiaepainelsolar.png" alt="Lampada LED Com Energia e Painel Solar">
-        <h3>Lampada LED Com Energia e Painel Solar</h3>
-      </article>
-  
-      <article>
-        <img src="lampadaled.png" alt="Lampada LED KIT 20 UNI">
-        <h3>Lampada LED KIT 20 UNI</h3>
-      </article>
+      <section aria-labelledby="Autonomia">
+       
 
-      </article>
+        <!-- Grid: Autonomia -->
+        <section class="produtos-grid" role="list" aria-label="Produtos para autonomia">
+          <article class="produto-card" role="listitem">
+            <figure>
+              <img src="imagens/carregadoraluzsolar.png" alt="Powerbank Solar" class="produto-img">
+              <figcaption class="visually-hidden">Powerbank Solar</figcaption>
+            </figure>
+            <h3>Powerbank Solar</h3>
+            <p class="produto-preco">R$ 129,90</p>
+            <a class="btn-comprar" href="/produto/powerbank-solar" role="button">Comprar</a>
+          </article>
+
+          <article class="produto-card" role="listitem">
+            <figure>
+              <img src="imagens/ventilador.png" alt="Ventilador Solar" class="produto-img">
+              <figcaption class="visually-hidden">Ventilador Solar</figcaption>
+            </figure>
+            <h3>Ventilador Solar</h3>
+            <p class="produto-preco">R$ 199,90</p>
+            <a class="btn-comprar" href="/produto/ventilador-solar" role="button">Comprar</a>
+          </article>
+
+          <article class="produto-card" role="listitem">
+            <figure>
+              <img src="imagens/estação.png" alt="Bateria Portátil" class="produto-img">
+              <figcaption class="visually-hidden">Estação de energia solar</figcaption>
+            </figure>
+            <h3>Estação de energia solar</h3>
+            <p class="produto-preco">R$ 349,90</p>
+            <a class="btn-comprar" href="/produto/bateria-portatil" role="button">Comprar</a>
+          </article>
+
+          <article class="produto-card" role="listitem">
+            <figure>
+              <img src="imagens/kit.png" alt="Inversor portátil" class="produto-img">
+              <figcaption class="visually-hidden">Kit energia solar portátil</figcaption>
+            </figure>
+            <h3>Kit energia solar portátil</h3>
+            <p class="produto-preco">R$ 399,90</p>
+            <a class="btn-comprar" href="/produto/inversor-portatil" role="button">Comprar</a>
+          </article>
+        </section>
+      </section>
     </section>
-  </section>
+  
+    <%- include("../partials/footer") %>
 
-  <footer>
-    <p>© EcoGeneration.</p>
-    <p><a href="#">Termos de Serviço</a> | <a href="#">Privacidade</a></p>
-</footer>
   
   
 

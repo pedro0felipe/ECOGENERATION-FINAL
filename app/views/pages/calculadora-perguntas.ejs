@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoCalculadora — EcoGeneration</title>
+  <link rel="stylesheet" href="/css/calculadora.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include("../partials/header") %>
+
+  <main class="eco-main" id="calculadora">
+    <section aria-labelledby="calc-title" class="eco-calculator-section">
+      <h1 id="calc-title">EcoCalculadora</h1>
+      <p class="eco-desc">Calcule sua estimativa de consumo e custo mensal e veja possíveis economias ao trocar para LEDs ou usar energia solar.</p>
+
+      <form id="calcForm" class="calc-form" novalidate>
+        <fieldset>
+          <legend>Iluminação (ex.: lâmpadas)</legend>
+
+          <label for="numLamps">Quantidade de lâmpadas</label>
+          <input id="numLamps" name="numLamps" type="number" min="0" value="4" required>
+
+          <label for="wattLamp">Potência média por lâmpada (W)</label>
+          <input id="wattLamp" name="wattLamp" type="number" min="0" value="9" required>
+
+          <label for="hoursPerDay">Horas de uso por dia</label>
+          <input id="hoursPerDay" name="hoursPerDay" type="number" min="0" step="0.1" value="5" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tarifa e outros</legend>
+
+          <label for="priceKwh">Preço por kWh (R$)</label>
+          <input id="priceKwh" name="priceKwh" type="number" min="0" step="0.01" value="0.80" required>
+
+          <label for="solarPercent">Porcentagem de energia coberta por solar (%)</label>
+          <input id="solarPercent" name="solarPercent" type="number" min="0" max="100" value="0">
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="button" id="btnCalculate" class="eco-btn">Calcular</button>
+          <button type="reset" id="btnReset" class="eco-btn eco-btn--muted">Limpar</button>
+        </div>
+      </form>
+
+      <section id="results" class="calc-results" aria-live="polite" hidden>
+        <h2>Resultados</h2>
+        <p><strong>Consumo estimado:</strong> <span id="res-kwh">—</span> kWh / mês</p>
+        <p><strong>Custo estimado:</strong> R$ <span id="res-cost">—</span> / mês</p>
+        <p><strong>Economia com LEDs (estimada):</strong> R$ <span id="res-led-saving">—</span> / mês</p>
+        <p><strong>Energia coberta por solar:</strong> R$ <span id="res-solar-offset">—</span> / mês</p>
+      </section>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+
+  <script src="/js/calculadora.js" defer></script>
+</body>
+</html>

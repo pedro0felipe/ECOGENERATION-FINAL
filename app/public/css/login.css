@@ -1,94 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #a0d995;
+  font-family: Arial, sans-serif;
+  margin: 2rem;
 }
 
-.login-container {
-    background: whitesmoke;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+/* Header com fundo verde e logo centralizada */
+header {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-height: 50px;
+  height: auto;
+}
+
+/* Centraliza o título do formulário */
+.titulo-centralizado {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
+  text-align: center;
+  margin-bottom: 2.5rem !important;
 }
 
-fieldset.form-group {
-    border: none;
-    margin-bottom: 1rem;
+
+/* Centraliza os inputs, selects e botões do formulário principal */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente os campos */
 }
 
-legend {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 0.5rem;
+#login-form input,
+#login-form select,
+#login-form textarea,
+#login-form button {
+  width: 300px; /* largura fixa */
+  max-width: 90vw; /* responsividade */
+  margin-bottom: 15px;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
+/* Labels alinhados à esquerda, alinhados com os campos */
+#login-form label {
+  align-self: flex-start;
+  margin-left: calc(50% - 150px); /* para alinhar com input de 300px */
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+/* Mensagens de erro alinhadas igual os labels */
+#login-form section.ui.pointing.red.basic.label {
+  max-width: 300px;
+  margin-left: -191px;
+  margin-bottom: 15px;
 }
 
-input:focus {
-    outline: none;
-    border-color: #1877f2;
-    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
-}
-
+/* Ajuste nos botões para espaçamento */
 button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #1877f2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
 }
 
-button:hover {
-    background-color: #166fe5;
+  
+header {
+    background-color: #A0D995; /* Fundo verde */
+    text-align: center; /* Alinha o conteúdo (logo) ao centro */
+    padding: 20px 0; /* Espaçamento em cima e embaixo */
 }
 
-.error-container {
-    margin-bottom: 1rem;
+.logo {
+  max-width: 400px; /* Tamanho máximo para a logo */
+  height: auto;     /* Mantém a proporção */
 }
 
-.error {
-    color: #dc2626;
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
+  footer {
+    text-align: center;
+    background-color: #A0D995;
+    padding: 1em 0;
+
+  }
+
+  body.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Faz o conteúdo crescer e empurra o rodapé para o final */
+  main {
+    flex: 1;
+  }
+
+  #login-form input,
+#login-form select {
+  height: 3em;         /* aumenta a altura */
+  font-size: 1.1em;     /* aumenta o tamanho da fonte */
+  padding: 0.5em;       /* aumenta o espaço interno */
 }
 
-@media (max-width: 480px) {
-    .login-container {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
+#login-form button {
+  height: 3em;
+  font-size: 1.1em;
 }
+

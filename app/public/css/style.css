@@ -18,21 +18,24 @@ h2 {
 }
 
 .btn-comprar {
-  margin-top: 12px;
-  padding: 10px 22px;
+  margin-top: 8px;
+  padding: 6px 14px;            /* menor altura/largura */
   background-color: #84B5F2;
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.95rem;          /* fonte menor */
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.2s, transform 0.12s;
+  width: auto;                 /* não ocupa 100% do card */
+  min-width: 100px;            /* garante clicabilidade */
+  align-self: center;          /* centraliza no card */
 }
 
 .btn-comprar:hover {
-  background-color: #84B5F2;
-  transform: scale(1.05);
+  background-color: #76aee6;
+  transform: translateY(-1px);
 }
 .menu-toggle {
   position: absolute;
@@ -192,4 +195,41 @@ footer {
   text-align: center;
   font-size: 1.1em;
   border: none;
+}
+
+.sobre {
+  background: #ffffff;
+  padding: 18px 22px;
+  margin: 12px auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: left;
+  width: calc(100% - 32px); /* ocupa quase toda a largura disponível */
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.sobre h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #0b8945;
+}
+
+.sobre p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* em telas maiores aproveita ainda mais a largura */
+@media (min-width: 700px) {
+  .sobre {
+    width: calc(100% - 140px);
+    margin: 18px 70px;
+    padding: 22px 28px;
+    border-radius: 8px;
+  }
+  .sobre h2 { font-size: 1.6rem; }
+  .sobre p  { font-size: 1.05rem; }
 }
