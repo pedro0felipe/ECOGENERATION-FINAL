@@ -4,7 +4,8 @@
   <section class="header-container">
     <figure class="logo-figure">
       <a href="/">
-      <img src="imagens/GENERATION (1).svg" alt="EcoGeneration Logo" class="logo">
+        <!-- caminho absoluto e nome sem espaços -->
+        <img src="imagens/GENERATIONN.svg" alt="EcoGeneration Logo" class="logo">
       </a>
     </figure>
 
@@ -13,40 +14,38 @@
         <li><a href="/categoria/energia">Autonomia</a></li>
         <li><a href="/categoria/iluminacao">Iluminação</a></li>
         <li><a href="/categoria/agua">Economia</a></li>
-        <li><a href="/categoria/solar"></a></li>
+        <li><a href="/categoria/solar">Solar</a></li>
         <li><a href="/login">Login</a></li>
       </ul>
     </nav>
 
     <button class="hamburger" id="hamburger" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
 
-    <form action="/search" method="get" class="search-form">
+     <form action="/search" method="get" class="search-form">
       <input type="text" name="q" placeholder="Pesquisar..." />
       <button type="submit">Buscar</button>
     </form>
-
-  
   </section>
 </header>
-<script>
-  
-  // Menu hamburguer responsivo
-  const hamburger = document.getElementById('hamburger');
-  const navCategorias = document.getElementById('nav-categorias');
-  hamburger.addEventListener('click', () => {
-    navCategorias.classList.toggle('open');
-    hamburger.classList.toggle('open');
-  });
 
-  // Fecha o menu ao clicar em qualquer link de categoria
-  document.querySelectorAll('#nav-categorias a').forEach(link => {
-    link.addEventListener('click', () => {
-      navCategorias.classList.remove('open');
-      hamburger.classList.remove('open');
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navCategorias = document.getElementById('nav-categorias');
+    if (!hamburger || !navCategorias) return;
+
+    hamburger.addEventListener('click', () => {
+      navCategorias.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+
+    document.querySelectorAll('#nav-categorias a').forEach(link => {
+      link.addEventListener('click', () => {
+        navCategorias.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
     });
   });
 </script>

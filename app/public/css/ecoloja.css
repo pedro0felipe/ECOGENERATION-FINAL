@@ -175,10 +175,10 @@ h4 {
 /* indicadores */
 .carousel-nav {
   display: flex;
-  gap: 8px;
-  justify-content: center;
-  padding: 8px 0 0 0;
-  margin: 0;
+  justify-content: center; /* Centraliza as bolinhas */
+  list-style: none; /* Remove os marcadores padrão */
+  padding: 0;
+  margin: 1rem 0; /* Espaçamento acima e abaixo */
 }
 .carousel-nav button {
   width: 10px;
@@ -219,27 +219,31 @@ h4 {
 }
 
 .carousel-button {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 15px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de ponteiro */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 10px; /* Margem ao redor */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.carousel-button:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
 }
 
 .carousel-button--left {
-    left: 10px;
+    left: 10px; /* Ajuste a distância da borda esquerda */
 }
 
 .carousel-button--right {
-    right: 10px;
+    right: 10px; /* Ajuste a distância da borda direita */
 }
 
-/* Estilo para as setas */
+/* Ajuste o tamanho do SVG se necessário */
 .carousel-button svg {
-    width: 24px;
-    height: 24px;
-    fill: #000; /* Cor das setas */
+    width: 24px; /* Largura do SVG */
+    height: 24px; /* Altura do SVG */
+    fill: currentColor; /* Cor atual */
 }

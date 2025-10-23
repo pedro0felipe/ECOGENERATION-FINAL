@@ -1,27 +1,24 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 2rem;
+  background-color: #A0D995; /* Fundo verde */
 }
 
-/* Header com fundo verde e logo centralizada */
-header {
-  background-color: green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  margin-bottom: 30px;
+.header-container {
+  padding: 0.8rem 1rem; /* Padding consistente */
 }
 
-.logo {
-  max-height: 50px;
-  height: auto;
-}
 
-/* Centraliza o título do formulário */
-.titulo-centralizado {
-  text-align: center;
-  margin-bottom: 30px;
+
+/* Container principal com fundo branco */
+main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #fff; /* Fundo branco para o formulário */
+  border-radius: 8px;
+ 
 }
 
 h1 {
@@ -34,7 +31,7 @@ h1 {
 #cadastro-form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza horizontalmente os campos */
+  align-items: center; /* Centraliza horizontalmente os campos */
 }
 
 #cadastro-form input,
@@ -80,10 +77,7 @@ h1 {
   box-shadow: 0 0 0 1px rgba(159,58,56,0.12);
 }
 
-/* Ajuste para que labels continuem alinhados */
-#cadastro-form label {
-  /* ...existing rules kept... */
-}
+
 
 /* Ajuste nos botões para espaçamento */
 button {
@@ -126,16 +120,7 @@ button {
   width: 100%;
 }
 
-header {
-    background-color: #A0D995; /* Fundo verde */
-    text-align: center; /* Alinha o conteúdo (logo) ao centro */
-    padding: 20px 0; /* Espaçamento em cima e embaixo */
-}
 
-.logo {
-  max-width: 400px; /* Tamanho máximo para a logo */
-  height: auto;     /* Mantém a proporção */
-}
 
   footer {
     text-align: center;
@@ -166,6 +151,23 @@ header {
 #cadastro-form button {
   height: 3em;
   font-size: 1.1em;
+}
+
+/* Estilo para o botão de busca */
+.search-form button {
+  padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
+  font-size: 1rem; /* Ajuste o tamanho da fonte */
+  border-radius: 4px; /* Bordas arredondadas */
+  background-color: #4CAF50; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Remover borda padrão */
+  cursor: pointer; /* Cursor de ponteiro */
+}
+
+/* Se o botão de busca estiver dentro de um formulário, você pode querer garantir que não herde estilos indesejados */
+.search-form {
+  display: flex; /* Certifique-se de que o layout esteja correto */
+  align-items: center; /* Alinhe verticalmente */
 }
 
 

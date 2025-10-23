@@ -3,20 +3,8 @@ body {
   margin: 2rem;
 }
 
-/* Header com fundo verde e logo centralizada */
-header {
-  background-color: green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  margin-bottom: 30px;
-}
 
-.logo {
-  max-height: 50px;
-  height: auto;
-}
+
 
 /* Centraliza o título do formulário */
 .titulo-centralizado {
@@ -32,26 +20,9 @@ h1 {
 
 /* Centraliza os inputs, selects e botões do formulário principal */
 #login-form {
-  position: relative; /* necessário para posicionar corretamente as labels de erro */
   display: flex;
   flex-direction: column;
   align-items: center; /* centraliza horizontalmente os campos */
-}
-
-/* empilha os botões de ação no formulário de login */
-#login-form p.form-actions {
-  display: flex;
-  flex-direction: column; /* empilha verticalmente */
-  gap: 0.75rem;           /* espaçamento entre botões */
-  align-items: center;    /* centraliza os botões */
-  margin: 0;
-}
-
-/* garante que cada botão ocupe linha própria */
-#login-form p.form-actions button {
-  width: 300px; /* mantém largura consistente */
-  margin-right: 0; /* remove margem lateral */
-  display: block;
 }
 
 #login-form input,
@@ -73,42 +44,19 @@ h1 {
 
 /* Mensagens de erro alinhadas igual os labels */
 #login-form section.ui.pointing.red.basic.label {
-  position: absolute;
-  left: calc(50% - 150px); /* mantém alinhamento com os inputs de 300px */
-  top: calc(100% + 6px);   /* fica logo abaixo do input/field */
-  margin: 0;
-  width: 300px;
-  max-width: 90vw;
-  visibility: hidden;      /* escondido por padrão — não altera layout */
-  opacity: 0;
-  transition: opacity 0.12s ease;
-  pointer-events: none;
-}
-
-/* classe para mostrar o aviso sem mexer no layout */
-#login-form section.ui.pointing.red.basic.label.visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  max-width: 300px;
+  margin-left: -191px;
+  margin-bottom: 15px;
 }
 
 /* Ajuste nos botões para espaçamento */
-button {
+#login-form button {
   margin-top: 1rem;
   margin-right: 0.5rem;
 }
 
   
-header {
-    background-color: #A0D995; /* Fundo verde */
-    text-align: center; /* Alinha o conteúdo (logo) ao centro */
-    padding: 20px 0; /* Espaçamento em cima e embaixo */
-}
 
-.logo {
-  max-width: 400px; /* Tamanho máximo para a logo */
-  height: auto;     /* Mantém a proporção */
-}
 
   footer {
     text-align: center;
@@ -141,9 +89,3 @@ header {
   font-size: 1.1em;
 }
 
-.singup-link {
-  text-align: center;
-  margin-top: 1rem;
-  width: 100%; /* Garante que ocupe toda a largura disponível */
-  display: block; /* Garante que seja tratado como bloco */
-}

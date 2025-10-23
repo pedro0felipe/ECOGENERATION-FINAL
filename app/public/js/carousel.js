@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.carousel-button--right');
-    const prevButton = document.querySelector('.carousel-button--left');
+    const nextButton = document.querySelector('.carousel-button--next');
+    const prevButton = document.querySelector('.carousel-button--prev');
+    const indicators = document.querySelectorAll('.carousel-indicator');
 
     const slideWidth = slides[0].getBoundingClientRect().width;
 
@@ -31,10 +32,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Rotação automática a cada 3 segundos
-     setInterval(() => {
+    setInterval(() => {
         const currentSlide = track.querySelector('.current');
         const nextSlide = currentSlide.nextElementSibling || slides[0];
         moveToSlide(currentSlide, nextSlide);
     }, 6000);
 
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            // Remove a classe 'current' de todas as bolinhas
+            indicators.forEach(ind => ind.classList.remove('current'));
+            // Adiciona a classe 'current' à bolinha clicada
+            indicator.classList.add('current');
+
+            // Muda o slide ativo
+            slides.forEach(slide => slide.classList.remove('current'));
+            slides[index].classList.add('current');
+        });
+    });
 });

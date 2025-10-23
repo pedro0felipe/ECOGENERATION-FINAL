@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const { body, validationResult } = require('express-validator');
+const { body, validationResult, check } = require('express-validator');
 router.get("/", function (req, res) {
     res.render("index", {titulo:"Pagina inicial"})
 });
@@ -40,12 +40,29 @@ router.get("/carregador", function (req, res) {
     res.render("carregador", {titulo:"carregador"})
 });
 
-router.get("/cadastro", function (req, res) {
-    res.render("cadastro", {titulo:"avançado"})
+router.get('/cadastro', (req, res) => {
+  // Note o 'pages/cadastro' em vez de 'pages/cadastro'
+  res.render('cadastro', { titulo: 'Cadastro', old: {}, errors: {} });
 });
-router.get('/', (req, res) => {
-    res.redirect('/login');
-});
+
+router.post(
+  '/cadastro',
+  [
+    check('nome').notEmpty().withMessage('Nome é obrigatório'),
+    check('email').isEmail().withMessage('Email inválido'),
+    check('senha').isLength({ min: 6 }).withMessage('Senha deve ter pelo menos 6 caracteres'),
+    check('sexo').notEmpty().withMessage('Campo é obrigatório'),
+    check('descricao').notEmpty().withMessage('Descrição é obrigatória'),
+  ],
+  (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      // renderiza novamente o formulário com erros
+      return res.render('cadastro', { old: req.body, errors: errors.mapped() });
+    }
+    res.redirect('/');
+  }
+);
 
 // Rota para renderizar a página de login
 router.get('/login', (req, res) => {
@@ -56,4 +73,23 @@ router.get('/login', (req, res) => {
 
 
 
+router.post(
+  '/login',
+  [
+    check('email').isEmail().withMessage('Email inválido'),
+    check('senha').isLength({ min: 6 }).withMessage('Senha deve ter pelo menos 6 caracteres'),
+  ],
+  (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const mappedErrors = errors.mapped();
+      return res.render('login', { errors: mappedErrors, old: req.body });
+    }
+    // Login bem-sucedido, redireciona para a tela inicial
+    res.redirect('/');
+  }
+);
+
 module.exports = router;
+
+
