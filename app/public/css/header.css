@@ -105,7 +105,7 @@ header {
   font-size: 1.1rem;
 }
 
-/* Busca e ações ocupam largura total no mobile */
+/* Header actions container */
 .header-actions {
   display: flex;
   flex-direction: column;
@@ -114,6 +114,7 @@ header {
   width: 100%;
 }
 
+/* Busca e ações ocupam largura total no mobile */
 .search-form {
   display: flex;
   align-items: center;
@@ -220,11 +221,13 @@ header {
   }
 
   .header-actions {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: auto;
-    gap: 10px;
+    gap: 24px;
+    margin-left: auto;
   }
 
   .search-form {
@@ -232,11 +235,7 @@ header {
     max-width: 500px;
     margin-left: auto;
     margin-top: 0;
-  }
-
-  .login-btn {
-    width: auto;
-    margin-left: 12px;
+    flex: 0 0 auto;
   }
 }
 

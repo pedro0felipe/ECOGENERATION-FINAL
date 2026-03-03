@@ -1,11 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #A0D995; /* Fundo verde */
+  
 }
 
-.header-container {
-  padding: 0.8rem 1rem; /* Padding consistente */
-}
 
 
 
@@ -68,6 +65,7 @@ h1 {
   max-width: 300px;
   margin-left: -191px;
   margin-bottom: 15px;
+  
 }
 
 /* Estado visual do input inválido */
@@ -86,6 +84,8 @@ button {
   display: block;
   width: 300px;
   align-self: center;
+  background-color: #A0D995;
+  color: white;
 }
 
 /* Container para empilhar botões na vertical e centralizar */
@@ -158,8 +158,7 @@ button {
   padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
   font-size: 1rem; /* Ajuste o tamanho da fonte */
   border-radius: 4px; /* Bordas arredondadas */
-  background-color: #4CAF50; /* Cor de fundo */
-  color: white; /* Cor do texto */
+  background-color: #A0D995; /* Cor de fundo */
   border: none; /* Remover borda padrão */
   cursor: pointer; /* Cursor de ponteiro */
 }
@@ -170,5 +169,14 @@ button {
   align-items: center; /* Alinhe verticalmente */
 }
 
+/* Sobrescrever estilos do Semantic UI para botões */
+.ui.primary.button {
+  background-color: #A0D995 !important;
+  color: white !important;
+}
 
+.ui.button {
+  
+  color:A0D995  !important;
+}
 
