@@ -189,7 +189,8 @@ h4 {
   padding: 0;
   cursor: pointer;
 }
-.carousel-nav button.is-selected { background: #4aa64a; }
+.carousel-nav button.is-selected,
+.carousel-nav button.current { background: #4aa64a; }
 
 /* desktop: mostrar maior imagem */
 @media (min-width: 700px) {
@@ -246,4 +247,11 @@ h4 {
     width: 24px; /* Largura do SVG */
     height: 24px; /* Altura do SVG */
     fill: currentColor; /* Cor atual */
+}
+
+/* escondemos quaisquer botões de navegação clássicos, caso ainda existam */
+.carousel-button,
+.carousel-button--prev,
+.carousel-button--next {
+  display: none !important;
 }

@@ -1,53 +1,76 @@
 document.addEventListener('DOMContentLoaded', function () {
     const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.carousel-button--next');
-    const prevButton = document.querySelector('.carousel-button--prev');
-    const indicators = document.querySelectorAll('.carousel-indicator');
+    const slides = track ? Array.from(track.children) : [];
+    const nav = document.querySelector('.carousel-nav');
+    if (!nav || !track || slides.length === 0) return;
 
-    const slideWidth = slides[0].getBoundingClientRect().width;
+    let indicators = [];
+    let slideWidth = 0;
+    let autoRotateId = null;
 
-    // Organize slides next to one another
-    const setSlidePosition = (slide, index) => {
-        slide.style.left = slideWidth * index + 'px';
+    const updateSizes = () => {
+        slideWidth = slides[0].getBoundingClientRect().width || track.clientWidth;
+        slides.forEach((slide, index) => {
+            slide.style.left = `${slideWidth * index}px`;
+        });
+        const currentIndex = slides.findIndex(s => s.classList.contains('current'));
+        const idx = currentIndex >= 0 ? currentIndex : 0;
+        track.style.transform = `translateX(-${idx * slideWidth}px)`;
     };
-    slides.forEach(setSlidePosition);
+
+    const updateIndicators = (newIndex) => {
+        indicators.forEach((ind, i) => ind.classList.toggle('current', i === newIndex));
+    };
 
     const moveToSlide = (currentSlide, targetSlide) => {
-        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-        currentSlide.classList.remove('current');
+        const targetIndex = slides.indexOf(targetSlide);
+        if (targetIndex === -1) return;
+        track.style.transform = `translateX(-${targetIndex * slideWidth}px)`;
+        if (currentSlide) currentSlide.classList.remove('current');
         targetSlide.classList.add('current');
+        updateIndicators(targetIndex);
     };
 
-    nextButton.addEventListener('click', () => {
-        const currentSlide = track.querySelector('.current');
-        const nextSlide = currentSlide.nextElementSibling || slides[0];
-        moveToSlide(currentSlide, nextSlide);
-    });
+    const startAutoRotate = () => {
+        if (autoRotateId) clearInterval(autoRotateId);
+        autoRotateId = setInterval(() => {
+            const currentSlide = track.querySelector('.current') || slides[0];
+            const next = currentSlide.nextElementSibling || slides[0];
+            moveToSlide(currentSlide, next);
+        }, 6000);
+    };
 
-    prevButton.addEventListener('click', () => {
-        const currentSlide = track.querySelector('.current');
-        const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
-        moveToSlide(currentSlide, prevSlide);
-    });
-
-    // Rotação automática a cada 3 segundos
-    setInterval(() => {
-        const currentSlide = track.querySelector('.current');
-        const nextSlide = currentSlide.nextElementSibling || slides[0];
-        moveToSlide(currentSlide, nextSlide);
-    }, 6000);
-
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            // Remove a classe 'current' de todas as bolinhas
-            indicators.forEach(ind => ind.classList.remove('current'));
-            // Adiciona a classe 'current' à bolinha clicada
-            indicator.classList.add('current');
-
-            // Muda o slide ativo
-            slides.forEach(slide => slide.classList.remove('current'));
-            slides[index].classList.add('current');
+    const buildIndicators = () => {
+        nav.innerHTML = '';
+        slides.forEach((_, index) => {
+            const btn = document.createElement('button');
+            btn.classList.add('carousel-indicator');
+            btn.setAttribute('aria-label', `Slide ${index + 1}`);
+            if (index === 0) btn.classList.add('current');
+            btn.addEventListener('click', () => {
+                const currentSlide = track.querySelector('.current') || slides[0];
+                const target = slides[index];
+                moveToSlide(currentSlide, target);
+                startAutoRotate();
+            });
+            nav.appendChild(btn);
         });
+        indicators = Array.from(nav.querySelectorAll('button'));
+    };
+
+    const init = () => {
+        if (!track.querySelector('.current')) slides[0].classList.add('current');
+        buildIndicators();
+        updateSizes();
+        startAutoRotate();
+    };
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => updateSizes(), 120);
     });
+
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
 });

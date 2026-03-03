@@ -23,3 +23,10 @@
     margin: 0 5px;
     cursor: pointer;
 }
+
+/* estamos usando apenas indicadores – não há botões de navegação visíveis */
+.carousel-button,
+.carousel-button--prev,
+.carousel-button--next {
+    display: none !important;
+}
