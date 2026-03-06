@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 2rem;
+  margin: 1rem; /* margem suavizada */
+  background-color: #f9f9f9; /* fundo mais leve */
 }
 
 
@@ -8,12 +9,12 @@ body {
 /* Centraliza o título do formulário */
 .titulo-centralizado {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* margem suavizada */
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 2.5rem !important;
+  margin-bottom: 2rem !important; /* margem suavizada */
 }
 
 
@@ -30,7 +31,13 @@ h1 {
 #login-form button {
   width: 300px; /* largura fixa */
   max-width: 90vw; /* responsividade */
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* margem suavizada */
+  border: 1px solid #ccc; /* contorno suave */
+}
+
+#login-form input::placeholder,
+#login-form textarea::placeholder {
+  color: #999; /* placeholder mais suave */
 }
 
 /* Labels alinhados à esquerda, alinhados com os campos */
@@ -45,7 +52,7 @@ h1 {
 #login-form section.ui.pointing.red.basic.label {
   max-width: 300px;
   margin-left: -191px;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* margem suavizada */
 }
 
 /* Ajuste nos botões para espaçamento */
@@ -81,9 +88,33 @@ h1 {
   height: 3em;         /* aumenta a altura */
   font-size: 1.1em;     /* aumenta o tamanho da fonte */
   padding: 0.5em;       /* aumenta o espaço interno */
+  border-radius: 8px;   /* bordas arredondadas */
 }
 
 #login-form button {
   height: 3em;
   font-size: 1.1em;
+  border-radius: 8px;   /* bordas arredondadas */
+}
+
+/* Botão de login verde */
+.ui.primary.button {
+  background-color: #4CAF50 !important; /* verde */
+  color: white !important;
+  margin: none;
+}
+
+/* Botão limpar cinza neutro */
+.ui.button[type="reset"] {
+  background-color: #9E9E9E !important; /* cinza neutro */
+  color: white !important;
+}
+
+/* Mensagens de erro em vermelho */
+.ui.pointing.red.basic.label {
+  color: #D32F2F !important; /* vermelho */
+}
+
+a{
+  text-decoration: none;
 }

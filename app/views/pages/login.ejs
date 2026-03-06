@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login</title>
   <!-- Semantic UI CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" >
+  
   <link rel="stylesheet" href="/css/header.css" >
   <link rel="stylesheet" href="/css/login.css" >
   <link rel="stylesheet" href="/css/style.css" >
  
 </head>
-<body class="layout">
   <%- include("../partials/header") %>
+<body class="layout">
+
 
   <main>
+  
     <h1 class="ui header">Login</h1> 
     <form action="/login" method="post" class="ui form" id="login-form">
       <label for="email">E-mail</label>

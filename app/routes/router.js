@@ -39,6 +39,9 @@ router.get("/miniventilador", function (req, res) {
 router.get("/carregador", function (req, res) {
     res.render("carregador", {titulo:"carregador"})
 });
+router.get("/sobre-nos", function (req, res) {
+    res.render("sobre-nos", {titulo:"Sobre Nós"})
+});
 
 router.get('/cadastro', (req, res) => {
   // Note o 'pages/cadastro' em vez de 'pages/cadastro'

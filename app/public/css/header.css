@@ -105,6 +105,13 @@ header {
   font-size: 1.1rem;
 }
 
+.nav-categorias li.active a {
+  color: #fff;
+  background-color: #4CAF50;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 /* Header actions container */
 .header-actions {
   display: flex;

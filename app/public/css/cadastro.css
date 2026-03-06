@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  
+  margin: 1rem; /* margem suavizada */
+  background-color: #f9f9f9; /* leve fundo claro, combina com login */
 }
 
 
@@ -20,7 +21,7 @@ main {
 
 h1 {
   text-align: center;
-  margin-bottom: 2.5rem !important;
+  margin-bottom: 2rem !important; /* margem suavizada */
 }
 
 
@@ -37,7 +38,15 @@ h1 {
 #cadastro-form button {
   width: 300px; /* largura fixa */
   max-width: 90vw; /* responsividade */
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* margem suavizada */
+  border: 1px solid #ccc; /* contorno suave */
+  border-radius: 8px; /* cantos arredondados */
+  outline: none; /* remove outline default */
+}
+
+#cadastro-form input::placeholder,
+#cadastro-form textarea::placeholder {
+  color: #999; /* placeholder mais suave */
 }
 
 /* Labels alinhados à esquerda, alinhados com os campos */
@@ -52,7 +61,7 @@ h1 {
 #cadastro-form label[data-error]:not([data-error=""])::after {
   content: attr(data-error);
   display: block;
-  color: #9f3a38;
+  color: #D32F2F; /* vermelho padrão semelhante ao login */
   font-size: 0.95em;
   margin-top: 0.25rem;
   max-width: 300px;
@@ -84,8 +93,9 @@ button {
   display: block;
   width: 300px;
   align-self: center;
-  background-color: #A0D995;
+  background-color: #4CAF50; /* verde mais vibrante como login */
   color: white;
+  border-radius: 8px; /* botões arredondados */
 }
 
 /* Container para empilhar botões na vertical e centralizar */
@@ -175,8 +185,18 @@ button {
   color: white !important;
 }
 
+/* botão limpar cinza neutro */
+.ui.button[type="reset"] {
+  background-color: #9E9E9E !important;
+  color: white !important;
+}
+
 .ui.button {
   
   color:A0D995  !important;
 }
 
+/* Mensagens de erro em vermelho */
+.ui.pointing.red.basic.label {
+  color: #D32F2F !important; /* vermelho */
+}
