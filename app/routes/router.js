@@ -7,6 +7,9 @@ router.get("/", function (req, res) {
 router.get("/calculadora-tela-inicial", function (req, res) {
     res.render("calculadora-tela-inicial", {titulo:"tela inicial da calculadora"})
 });
+router.get("/luminaria", function (req, res) {
+    res.render("luminaria", {titulo:"luminaria"})
+});
 
 // nova rota para as perguntas / calculadora
 router.get("/calculadora-perguntas", function (req, res) {
