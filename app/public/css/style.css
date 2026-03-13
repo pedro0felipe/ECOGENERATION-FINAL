@@ -9,6 +9,7 @@ body {
   line-height: 1.6;
     background:#f9fbf9;
   color: #333;
+  margin: 0;
 }
 h2 {
   
@@ -90,13 +91,12 @@ h2 {
 }
 
 .diagnostico-container{
-  max-width:auto;
-  margin:auto;
-  background-color: #f3fef3;
-  height: 45%;
-  width: 45%;
-  border-radius: 8px;
-
+  max-width: 800px;
+  width: min(90%, 800px);
+  margin: 0 auto;
+  padding: 28px 22px;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 .diagnostico h3{
@@ -186,6 +186,23 @@ p{
     flex-direction: column;
     gap: 16px;
   }
+
+  .passos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .passos .passo {
+    flex: 1 1 120px;
+    max-width: 140px;
+  }
+
+  .btn-diagnostico {
+    width: 100%;
+    padding: 14px 18px;
+  }
 }
   
 .ecoloja{
@@ -229,6 +246,7 @@ h2 {
   grid-template-columns: repeat(2, 1fr); /* mobile-first: 2 colunas em te0las pequenas */
   gap: 12px;
   padding: 0 8px;
+  margin-top: 1cm;
 }
 
 .produtos-grid article {
@@ -344,6 +362,8 @@ footer {
   margin: 60px auto;
   padding: 40px 20px;
   text-align: center;
+  margin-bottom: 3.5cm;
+  margin-top: 3.5cm;
 }
 
 .why-ecogeneration h2 {
@@ -421,22 +441,27 @@ footer {
 }
 
 .diagnostico {
-  background-color: #a0d995;
-
-  
-
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 80px 0;
+  background: linear-gradient(to right, #00c6ff, #47d075);
+  margin-bottom: 2.3cm;
 }
 
 .diagnostico-inicial h1 {
   font-size: 1.8rem;
-  color: #256029;
+  color: #bababa;
 
   text-align: center;
 }
 
 .diagnostico-inicial p {
   font-size: 1rem;
-  color: #333;
+  color: #efefef;
   margin-bottom: 30px;
 }
 
@@ -448,7 +473,7 @@ footer {
   border-radius: 6px;
   font-size: 1.1rem;
   font-weight: 600;
- 
+  margin-top: 1cm;
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -463,3 +488,8 @@ footer {
   color: #256029;
   margin: 20cm;
 }
+
+.descricao{
+ color:#003104
+}
+
