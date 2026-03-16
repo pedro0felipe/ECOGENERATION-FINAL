@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
+ <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora</title>
   <link rel="stylesheet" href="/css/header.css">
@@ -11,30 +11,33 @@
   <link rel="apple-touch-icon" href="/imagens/favicon.png">
   <link rel="icon" href="/imagens/favicon.png" type="image/png">
 </head>
-
-<body>
   <%- include("../partials/header") %>
 
+
+<body>
+
   <main class="eco-main">
+    <article class="eco-calculator-section">
+      <h1 class="calculator-hero-title">Faça seu Diagnóstico Energético</h1>
+      <p class="calculator-hero-description">Responda algumas perguntas rápidas e descubra as melhores soluções solares para sua casa.</p>
+      
+      <ul class="calculator-options">
+        <li class="option-item" style="--checkmark-color: #4CAF50;">Análise personalizada</li>
+        <li class="option-item" style="--checkmark-color: #999999;">Recomendações adaptadas</li>
+        <li class="option-item" style="--checkmark-color: #FFB84D;">Mais autonomia</li>
+      </ul>
+
+      <p class="calculator-time">⏱ leva menos de 1 minuto</p>
+
+      <form action="/calculadora/perguntas" method="get">
+        <button class="calculator-btn-start" type="submit">COMEÇAR</button>
+      </form>
+    </article>
     
-     
-     <section class="eco-calculator-section">
-      <h2 class="eco-header-title">
-        COMO USAR NOSSA <span class="cordiferente">CALCULADORA</span>
-      </h2>
-      <p class="eco-desc">
-        Descubra quanto você pode economizar e ter mais autonomia com hábitos mais eficientes e escolhas inteligentes. Responda algumas perguntas rápidas e veja o impacto no seu bolso, dia a dia e no planeta.
-      </p>
-      <article class="eco-card">
-        <h3 class="eco-card-title">
-          <b class="calculadora"><span class="outracor"></span>ECOCALCULADORA</b>
-        </h3>
-        <form action="/calculadora/perguntas" method="get">
-          <button class="eco-btn" type="submit">COMEÇAR</button>
-        </form>
-      </article>
-    </section>
-    <%- include("../partials/footer") %>
   </main>
+   
 </body>
+<footer>
+     <%- include("../partials/footer") %>
+     </footer>
 </html>
