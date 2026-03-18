@@ -35,8 +35,8 @@ router.get("/lampada", function (req, res) {
     res.render("lampada", {titulo:"lampada"})
 });
 
-router.get("/miniventilador", function (req, res) {
-    res.render("miniventilador", {titulo:"ventilador"})
+router.get("/ventilador", function (req, res) {
+    res.render("ventilador", {titulo:"ventilador"})
 });
 
 router.get("/carregador", function (req, res) {
