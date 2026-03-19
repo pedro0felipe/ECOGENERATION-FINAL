@@ -1,0 +1,72 @@
+.diagnostico-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.diagnostico-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.diagnostico-container p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.diagnostico-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pergunta {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.pergunta h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.pergunta label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.pergunta label:hover {
+    background-color: #f0f0f0;
+}
+
+.pergunta input[type="radio"] {
+    margin-right: 10px;
+}
+
+.btn-submit {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
