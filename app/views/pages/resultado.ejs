@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Diagnóstico</title>
+        <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="apple-touch-icon" href="/imagens/favicon2.png">
+    <link rel="icon" href="/imagens/favicon2.png" type="image/png">
+    <link rel="stylesheet" href="css/resultado.css">
+    
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main class="resultado-container">
+        <header>
+            <h1>Resultado do Diagnóstico</h1>
+        </header>
+
+        <% if (nivel === 'alta') { %>
+            <article class="resultado alta">
+                <h2>Autonomia Energética: Alta</h2>
+                <p>Você possui uma boa autonomia energética. Suas respostas indicam que você está bem preparado para eventuais quedas de energia, com sistemas adequados e baixa dependência da rede elétrica.</p>
+            </article>
+        <% } else if (nivel === 'media') { %>
+            <article class="resultado media">
+                <h2>Autonomia Energética: Média</h2>
+                <p>Você possui alguma preparação para quedas de energia, mas ainda há espaço para melhorias. Considere investir em soluções mais robustas para aumentar sua autonomia.</p>
+            </article>
+        <% } else { %>
+            <article class="resultado baixa">
+                <h2>Autonomia Energética: Baixa</h2>
+                <p>Você depende fortemente da rede elétrica. As quedas de energia afetam significativamente seu dia a dia. Recomendamos avaliar opções de energia alternativa para melhorar sua autonomia.</p>
+            </article>
+        <% } %>
+
+        <nav class="acoes">
+            <a href="/diagnostico" class="btn-voltar">Refazer Diagnóstico</a>
+            <a href="/" class="btn-home">Voltar ao Início</a>
+        </nav>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

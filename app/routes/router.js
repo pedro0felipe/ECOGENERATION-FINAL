@@ -73,7 +73,9 @@ router.get("/carregador", function (req, res) {
 router.get("/sobre-nos", function (req, res) {
     res.render("sobre-nos", {titulo:"Sobre Nós"})
 });
-
+router.get("/miniventilador", function (req, res) {
+    res.render("miniventilador", {titulo:"Miniventilador"})
+});
 router.get('/cadastro', (req, res) => {
   // Note o 'pages/cadastro' em vez de 'pages/cadastro'
   res.render('cadastro', { titulo: 'Cadastro', old: {}, errors: {} });
@@ -100,12 +102,8 @@ router.post(
 
 // Rota para renderizar a página de login
 router.get('/login', (req, res) => {
-    // fornece 'old' e 'errors' no formato esperado pelo template EJS
     res.render('login', { errors: {}, old: {} });
 });
-
-
-
 
 router.post(
   '/login',
@@ -119,10 +117,65 @@ router.post(
       const mappedErrors = errors.mapped();
       return res.render('login', { errors: mappedErrors, old: req.body });
     }
-    // Login bem-sucedido, redireciona para a tela inicial
     res.redirect('/');
   }
 );
+
+router.get('/diagnostico', (req, res) => {
+  res.render('diagnostico', { titulo: 'Diagnóstico de Autonomia Energética' });
+});
+
+router.post('/diagnostico', (req, res) => {
+  const { frequencia, impacto, preparacao, prioridade, tolerancia } = req.body;
+
+  let pontuacao = 0;
+
+  switch (frequencia) {
+    case 'nunca': pontuacao += 10; break;
+    case 'poucas': pontuacao += 5; break;
+    case 'algumas': pontuacao -= 5; break;
+    case 'frequentemente': pontuacao -= 10; break;
+  }
+
+  switch (impacto) {
+    case 'nao_afeta': pontuacao += 10; break;
+    case 'afeta_pouco': pontuacao += 5; break;
+    case 'afeta_bastante': pontuacao -= 5; break;
+    case 'afeta_muito': pontuacao -= 10; break;
+  }
+
+  switch (preparacao) {
+    case 'sistema_completo': pontuacao += 10; break;
+    case 'power_bank': pontuacao += 5; break;
+    case 'lanternas': pontuacao -= 5; break;
+    case 'nenhuma': pontuacao -= 10; break;
+  }
+
+  switch (prioridade) {
+    case 'iluminacao': pontuacao += 5; break;
+    case 'celular': pontuacao += 0; break;
+    case 'geladeira': pontuacao -= 5; break;
+    case 'trabalho': pontuacao -= 10; break;
+  }
+
+  switch (tolerancia) {
+    case 'um_dia': pontuacao += 10; break;
+    case 'algumas_horas': pontuacao += 5; break;
+    case 'uma_hora': pontuacao -= 5; break;
+    case 'nao_consigo': pontuacao -= 10; break;
+  }
+
+  let nivel;
+  if (pontuacao >= 20) {
+    nivel = 'alta';
+  } else if (pontuacao >= 0) {
+    nivel = 'media';
+  } else {
+    nivel = 'baixa';
+  }
+
+  res.render('resultado', { nivel });
+});
 
 module.exports = router;
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+      <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="apple-touch-icon" href="/imagens/favicon2.png">
+  <link rel="icon" href="/imagens/favicon2 .png" type="image/png">
+    <link rel="stylesheet" href="css/diagnostico.css">
+   
+   
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main class="diagnostico-container">
+        <h1>Diagnóstico de Autonomia Energética</h1>
+        <p>Responda às perguntas abaixo para avaliar sua autonomia energética.</p>
+
+        <form action="/diagnostico" method="POST" class="diagnostico-form">
+            <!-- Pergunta 1: Frequência de quedas de energia -->
+            <div class="pergunta">
+                <h3>1. Com que frequência ocorrem quedas de energia na sua região?</h3>
+                <label><input type="radio" name="frequencia" value="nunca" required> Nunca</label>
+                <label><input type="radio" name="frequencia" value="poucas"> Poucas vezes no ano</label>
+                <label><input type="radio" name="frequencia" value="algumas"> Algumas vezes no mês</label>
+                <label><input type="radio" name="frequencia" value="frequentemente"> Frequentemente</label>
+            </div>
+
+            <!-- Pergunta 2: Impacto no dia a dia -->
+            <div class="pergunta">
+                <h3>2. Qual o impacto das quedas de energia no seu dia a dia?</h3>
+                <label><input type="radio" name="impacto" value="nao_afeta" required> Não afeta</label>
+                <label><input type="radio" name="impacto" value="afeta_pouco"> Afeta pouco</label>
+                <label><input type="radio" name="impacto" value="afeta_bastante"> Afeta bastante</label>
+                <label><input type="radio" name="impacto" value="afeta_muito"> Afeta muito</label>
+            </div>
+
+            <!-- Pergunta 3: Preparação atual -->
+            <div class="pergunta">
+                <h3>3. Qual é a sua preparação atual para quedas de energia?</h3>
+                <label><input type="radio" name="preparacao" value="sistema_completo" required> Sistema completo (solar)</label>
+                <label><input type="radio" name="preparacao" value="power_bank"> Power bank / bateria</label>
+                <label><input type="radio" name="preparacao" value="lanternas"> Apenas lanternas</label>
+                <label><input type="radio" name="preparacao" value="nenhuma"> Nenhuma alternativa</label>
+            </div>
+
+            <!-- Pergunta 4: Prioridade de uso -->
+            <div class="pergunta">
+                <h3>4. Qual seria sua prioridade de uso durante uma queda de energia?</h3>
+                <label><input type="radio" name="prioridade" value="iluminacao" required> Iluminação</label>
+                <label><input type="radio" name="prioridade" value="celular"> Celular/internet</label>
+                <label><input type="radio" name="prioridade" value="geladeira"> Geladeira</label>
+                <label><input type="radio" name="prioridade" value="trabalho"> Trabalho/estudo</label>
+            </div>
+
+            <!-- Pergunta 5: Tolerância à falta de energia -->
+            <div class="pergunta">
+                <h3>5. Por quanto tempo você consegue tolerar a falta de energia?</h3>
+                <label><input type="radio" name="tolerancia" value="um_dia" required> Um dia ou mais</label>
+                <label><input type="radio" name="tolerancia" value="algumas_horas"> Algumas horas</label>
+                <label><input type="radio" name="tolerancia" value="uma_hora"> Até 1 hora</label>
+                <label><input type="radio" name="tolerancia" value="nao_consigo"> Não consigo ficar</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Diagnóstico</button>
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
