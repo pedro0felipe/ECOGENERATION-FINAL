@@ -39,6 +39,34 @@ router.get("/ventilador", function (req, res) {
     res.render("ventilador", {titulo:"ventilador"})
 });
 
+router.get("/lumi", function (req, res) {
+    res.render("lumi", {titulo:"lumi"})
+});
+
+router.get("/miniventilador", function (req, res) {
+    res.render("miniventilador", {titulo:"miniventilador"})
+});
+
+router.get("/painel-solar", function (req, res) {
+    res.render("painel-solar", {titulo:"painel-solar"})
+});
+
+router.get("/powerbank", function (req, res) {
+    res.render("powerbank", {titulo:"powerbank"})
+});
+
+router.get("/ventiladorsolar", function (req, res) {
+    res.render("ventiladorsolar", {titulo:"ventilador solar"})
+});
+
+router.get("/lampadasolar", function (req, res) {
+    res.render("lampadasolar", {titulo:"lâmpada solar"})
+});
+
+router.get("/kitenergiasolarportatil", function (req, res) {
+    res.render("kitenergiasolarportatil", {titulo:"kit energia solar portátil"})
+});
+
 router.get("/carregador", function (req, res) {
     res.render("carregador", {titulo:"carregador"})
 });
