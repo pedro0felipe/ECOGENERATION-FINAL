@@ -76,6 +76,67 @@ router.get("/sobre-nos", function (req, res) {
 router.get("/miniventilador", function (req, res) {
     res.render("miniventilador", {titulo:"Miniventilador"})
 });
+
+router.get("/painelsolarmedio", function (req, res) {
+    res.render("painelsolarmedio", {titulo:"Painel Solar Médio"})
+});
+
+router.get("/carregadorusb", function (req, res) {
+    res.render("carregadorusb", {titulo:"Carregador USB"})
+});
+
+router.get("/luminariasolar", function (req, res) {
+    res.render("luminariasolar", {titulo:"Luminaria Solar"})
+});
+
+router.get("/minipainel", function (req, res) {
+    res.render("minipainel", {titulo:"Mini Painel Solar"})
+});
+
+router.get("/ventiladormedio", function (req, res) {
+    res.render("ventiladormedio", {titulo:"Ventilador Medio Solar"})
+});
+
+router.get("/estacao", function (req, res) {
+    res.render("estacao", {titulo:"Estação de Energia Solar"})
+});
+
+router.get("/kitmedioo", function (req, res) {
+    res.render("kitmedioo", {titulo:"Kit Energia Solar Portátil"})
+});
+
+router.get("/estacaodeenergiaportatil", function (req, res) {
+    res.render("estacaodeenergiaportatil", {titulo:"Estação de Energia Portátil"})
+});
+
+router.get("/bluetti", function (req, res) {
+    res.render("bluetti", {titulo:"Bluetti EB3A Estação de Energia Portátil + Painel Solar SP120L"})
+});
+
+router.get("/estacaoeolica", function (req, res) {
+    res.render("estacaoeolica", {titulo:"Estação de Energia Eólica Portátil"})
+});
+
+router.get("/kitgerador", function (req, res) {
+    res.render("kitgerador", {titulo:"Kit Gerador Energia Solar 2,48kWp"})
+});
+
+router.get("/estacaogeradorsolar", function (req, res) {
+    res.render("estacaogeradorsolar", {titulo:"Estação De Energia Portátil Gerador Solar 600 1200w"})
+});
+
+router.get("/ecoflow", function (req, res) {
+    res.render("ecoflow", {titulo:"Gerador Portátil Ecoflow River 3 + Placa Solar 60w"})
+});
+
+router.get("/esttacao", function (req, res) {
+    res.render("esttacao", {titulo:"Estação de Energia Solar"})
+});
+
+router.get("/placamil", function (req, res) {
+    res.render("placamil", {titulo:"Kit 2x Placa Painel Solar Portátil Ecoflow 125W"})
+});
+
 router.get('/cadastro', (req, res) => {
   // Note o 'pages/cadastro' em vez de 'pages/cadastro'
   res.render('cadastro', { titulo: 'Cadastro', old: {}, errors: {} });
