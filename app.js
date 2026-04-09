@@ -1,16 +1,17 @@
 const express = require("express");
+const path = require("path");
 const dotenv = require("dotenv").config();
 const pool = require("./config/pool_conexoes");
 const session = require("express-session");
 const app = express();
 
-app.use(express.static("./app/public"));
-app.use(express.static("./app/admin/public"));
+app.use(express.static(path.join(__dirname, "app/public")));
+app.use(express.static(path.join(__dirname, "app/admin/public")));
 
 app.set("view engine", "ejs");
 app.set("views", [
-  "./app/views/pages",
-  "./app/admin/views"
+  path.join(__dirname, "app/views/pages"),
+  path.join(__dirname, "app/admin/views")
 ]);
 
 app.use(session({

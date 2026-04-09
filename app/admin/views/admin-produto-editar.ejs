@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/admin.css">
+    <link rel="icon" href="/imagens/favicon2.png" type="image/png">
 </head>
 
 <section class="admin-wrapper">
@@ -57,20 +58,14 @@
           <label for="categoria">Categoria *</label>
           <select id="categoria" name="categoria" required>
             <option value="">Selecione uma categoria...</option>
-            <option value="iluminacao" <%= !isNovo && produto.categoria_produto === 'iluminacao' ? 'selected' : '' %>>
-              💡 Iluminação
+            <option value="entrada" <%= !isNovo && produto.categoria_produto === 'entrada' ? 'selected' : '' %>>
+              Entrada
             </option>
-            <option value="ventilacao" <%= !isNovo && produto.categoria_produto === 'ventilacao' ? 'selected' : '' %>>
-              🌬️ Ventilação
+            <option value="medio" <%= !isNovo && produto.categoria_produto === 'medio' ? 'selected' : '' %>>
+              Médio
             </option>
-            <option value="energia" <%= !isNovo && produto.categoria_produto === 'energia' ? 'selected' : '' %>>
-              ⚡ Energia
-            </option>
-            <option value="carregamento" <%= !isNovo && produto.categoria_produto === 'carregamento' ? 'selected' : '' %>>
-              🔌 Carregamento
-            </option>
-            <option value="outros" <%= !isNovo && produto.categoria_produto === 'outros' ? 'selected' : '' %>>
-              📦 Outros
+            <option value="avancado" <%= !isNovo && produto.categoria_produto === 'avancado' ? 'selected' : '' %>>
+              Avançado
             </option>
           </select>
         </p>

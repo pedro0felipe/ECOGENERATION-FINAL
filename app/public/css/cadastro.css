@@ -142,6 +142,7 @@ h1 {
 #cadastro-form button {
   height: 3em;
   font-size: 1.1em;
+  cursor: pointer;
 }
 
 
@@ -154,6 +155,7 @@ h1 {
 .ui.button {
   
   color:A0D995  !important;
+  cursor: pointer;
 }
 
 /* Mensagens de erro em vermelho */

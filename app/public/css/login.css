@@ -102,12 +102,15 @@ h1 {
   background-color: #4CAF50 !important; /* verde */
   color: white !important;
   margin: none;
+  cursor: pointer;
 }
 
 /* Botão limpar cinza neutro */
 .ui.button[type="reset"] {
   background-color: #9E9E9E !important; /* cinza neutro */
   color: white !important;
+  cursor: pointer;
+
 }
 
 /* Mensagens de erro em vermelho */

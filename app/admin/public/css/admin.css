@@ -344,7 +344,7 @@
   font-size: 12px;
   font-weight: 600;
   background: #d4edda;
-  color: #155724;
+  
 }
 
 .stock-badge.critical {
@@ -492,15 +492,17 @@
   transition: all 0.3s;
   text-align: center;
   outline: none;
+  background: none;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #7FB3D5 0%, #5DADE2 50%, #2E86C1 100%);
-  min-height: 100vh;
+  background: #2E86C1;
+  min-height: auto;
   color: white;
 }
 
 .btn-primary:hover {
+  background: #256aa8;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
@@ -519,9 +521,8 @@
   color: white;
 }
 
-.btn-info:hover {
-  background: #138496;
-}
+
+
 
 .btn-danger {
   background: #dc3545;
