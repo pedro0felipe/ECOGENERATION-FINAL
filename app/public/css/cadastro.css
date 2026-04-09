@@ -87,7 +87,7 @@ h1 {
 
 
 /* Ajuste nos botões para espaçamento */
-button {
+#cadastro-form button {
   margin-top: 1rem;
   margin-right: 0; /* remove espaçamento horizontal */
   display: block;
@@ -107,18 +107,9 @@ button {
   width: 100%;
 }
 
-/* Estilo específico para botões dentro do container .botoes */
-#cadastro-form .botoes button {
-  margin: 0;              /* já controlado pelo gap do flex */
-  width: 300px;           /* mantém largura consistente */
-}
 
-/* Forçar empilhar botões dentro do formulário sem alterar o HTML */
-#cadastro-form button {
-  display: block !important;
-  width: 300px;
-  margin: 0.5rem auto !important; /* centraliza horizontalmente e cria espaçamento vertical */
-}
+
+
 
 /* Caso haja grupos de botões (ex.: .buttons ou Semantic UI .ui.buttons), forçar coluna */
 #cadastro-form .buttons,
@@ -139,17 +130,7 @@ button {
 
   }
 
-  body.layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  /* Faz o conteúdo crescer e empurra o rodapé para o final */
-  main {
-    flex: 1;
-  }
+
 
   #cadastro-form input,
 #cadastro-form select {
@@ -161,39 +142,20 @@ button {
 #cadastro-form button {
   height: 3em;
   font-size: 1.1em;
+  cursor: pointer;
 }
 
-/* Estilo para o botão de busca */
-.search-form button {
-  padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
-  font-size: 1rem; /* Ajuste o tamanho da fonte */
-  border-radius: 4px; /* Bordas arredondadas */
-  background-color: #A0D995; /* Cor de fundo */
-  border: none; /* Remover borda padrão */
-  cursor: pointer; /* Cursor de ponteiro */
-}
 
-/* Se o botão de busca estiver dentro de um formulário, você pode querer garantir que não herde estilos indesejados */
-.search-form {
-  display: flex; /* Certifique-se de que o layout esteja correto */
-  align-items: center; /* Alinhe verticalmente */
-}
 
-/* Sobrescrever estilos do Semantic UI para botões */
-.ui.primary.button {
-  background-color: #A0D995 !important;
-  color: white !important;
-}
 
-/* botão limpar cinza neutro */
-.ui.button[type="reset"] {
-  background-color: #9E9E9E !important;
-  color: white !important;
-}
+
+
+
 
 .ui.button {
   
   color:A0D995  !important;
+  cursor: pointer;
 }
 
 /* Mensagens de erro em vermelho */

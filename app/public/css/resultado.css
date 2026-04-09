@@ -1,82 +1,205 @@
 .resultado-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-.resultado-container header h1 {
-    color: #333;
-    margin-bottom: 30px;
+.resultado-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resultado-header h1 {
+  font-size: 2rem;
 }
 
 .resultado {
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.resultado.alta {
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
-}
-
-.resultado.media {
-    background-color: #fff3cd;
-    border: 1px solid #ffeaa7;
-    color: #856404;
-}
-
-.resultado.baixa {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .resultado h2 {
-    margin-bottom: 15px;
-    font-size: 1.5em;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
-.resultado p {
-    font-size: 1.1em;
-    line-height: 1.5;
+.alta {
+  background: #e8f5e9;
+  border-left: 6px solid #2e7d32;
+  color: #1b5e20;
+}
+
+.media {
+  background: #fff8e1;
+  border-left: 6px solid #f9a825;
+  color: #e65100;
+}
+
+.baixa {
+  background: #ffebee;
+  border-left: 6px solid #c62828;
+  color: #b71c1c;
+}
+
+.recomendacoes {
+  margin-bottom: 2rem;
+}
+
+.recomendacoes h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.produto-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.produto-categoria {
+  background: #e8f5e9;
+  padding: 0.3rem 0.8rem;
+}
+
+.produto-categoria span {
+  color: #2e7d32;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.produto-figura {
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  height: 160px;
+  margin: 0;
+}
+
+.produto-img {
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.produto-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.produto-nome {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.produto-desc {
+  font-size: 0.85rem;
+  color: #666;
+  flex: 1;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.produto-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.produto-preco {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.btn-comprar {
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-comprar:hover {
+  background: #1b5e20;
 }
 
 .acoes {
-    margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .btn-voltar {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.2s;
+  background: #f5f5f5;
+  color: #333;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 
 .btn-voltar:hover {
-    background-color: #0056b3;
+  background: #e0e0e0;
 }
 
 .btn-home {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #6c757d;
-    color: white;
-    transition: background-color 0.2s;
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 
 .btn-home:hover {
-    background-color: #545b62;
+  background: #1b5e20;
+}
+
+@media (max-width: 768px) {
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .produtos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .acoes {
+    flex-direction: column;
+    align-items: center;
+  }
 }

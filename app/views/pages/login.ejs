@@ -31,6 +31,9 @@
       <% if (errors.email) { %>
       <section class="ui pointing red basic label"><%= errors.email.msg %></section>
       <% } %>
+      <% if (errors.geral) { %>
+      <section class="ui pointing red basic label"><%= errors.geral.msg %></section>
+      <% } %>
 
       <label for="senha">Senha</label>
       <input

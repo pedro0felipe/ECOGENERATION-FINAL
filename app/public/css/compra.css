@@ -1,0 +1,288 @@
+/* ===== CONFIRMAR COMPRA ===== */
+.compra-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.compra-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.compra-header h1 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 0.3rem;
+}
+
+.compra-header p {
+  color: #666;
+}
+
+.compra-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.compra-produto-img {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.compra-produto-img img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.compra-produto-info {
+  flex: 1;
+}
+
+.compra-categoria {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.compra-produto-info h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.4rem;
+  color: #1a1a1a;
+}
+
+.compra-descricao {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.compra-preco {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.compra-resumo {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.compra-resumo h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.compra-resumo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compra-resumo li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.compra-resumo li:last-child {
+  border-bottom: none;
+}
+
+.compra-total {
+  font-size: 1rem !important;
+  color: #1a1a1a !important;
+}
+
+.compra-preco-total {
+  color: #2e7d32;
+  font-size: 1.1rem;
+}
+
+.compra-aviso {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #795548;
+}
+
+.compra-acoes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-confirmar {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-confirmar:hover {
+  background: #1b5e20;
+}
+
+.btn-voltar {
+  background: #f5f5f5;
+  color: #333;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+  background: #e0e0e0;
+}
+
+/* ===== COMPRA SUCESSO ===== */
+.sucesso-container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.sucesso-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.sucesso-icone {
+  margin: 0 auto 1.5rem;
+  width: 80px;
+  height: 80px;
+}
+
+.sucesso-icone svg {
+  width: 80px;
+  height: 80px;
+}
+
+.sucesso-card h1 {
+  font-size: 1.8rem;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.sucesso-subtitulo {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.sucesso-detalhes {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.sucesso-detalhes p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.4rem 0;
+}
+
+.sucesso-status {
+  margin-top: 0.8rem !important;
+}
+
+.badge-confirmado {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.sucesso-acoes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-perfil {
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-perfil:hover {
+  background: #1b5e20;
+}
+
+.btn-loja {
+  background: #f5f5f5;
+  color: #333;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-loja:hover {
+  background: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  .compra-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .compra-acoes {
+    flex-direction: column;
+  }
+
+  .btn-confirmar, .btn-voltar {
+    width: 100%;
+    text-align: center;
+  }
+}

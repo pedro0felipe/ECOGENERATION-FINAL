@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Compra — EcoGeneration</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/compra.css">
+  <link rel="icon" href="/imagens/favicon2.png" type="image/png">
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="compra-container">
+
+    <header class="compra-header">
+      <h1>Confirmar Compra</h1>
+      <p>Verifique os detalhes antes de finalizar</p>
+    </header>
+
+    <section class="compra-card">
+
+      <figure class="compra-produto-img">
+        <img src="/imagens/<%= produto.imagem_produto %>" alt="<%= produto.nome_produto %>">
+      </figure>
+
+      <section class="compra-produto-info">
+        <span class="compra-categoria"><%= produto.categoria_produto %></span>
+        <h2><%= produto.nome_produto %></h2>
+        <p class="compra-descricao"><%= produto.descricao_produto %></p>
+        <p class="compra-preco">R$ <%= produto.preco_produto %></p>
+      </section>
+
+    </section>
+
+    <section class="compra-resumo">
+      <h3>Resumo do pedido</h3>
+      <ul>
+        <li>
+          <span>Produto</span>
+          <strong><%= produto.nome_produto %></strong>
+        </li>
+        <li>
+          <span>Quantidade</span>
+          <strong>1 unidade</strong>
+        </li>
+        <li class="compra-total">
+          <span>Total</span>
+          <strong class="compra-preco-total">R$ <%= produto.preco_produto %></strong>
+        </li>
+      </ul>
+    </section>
+
+    <section class="compra-aviso">
+      <p>⚡ Esta é uma simulação de compra para fins de demonstração. Nenhum pagamento real será processado.</p>
+    </section>
+
+    <nav class="compra-acoes">
+      <form action="/confirmar-compra/<%= produto.id_produto %>" method="POST">
+        <button type="submit" class="btn-confirmar">Confirmar Compra</button>
+      </form>
+      <a href="/produto/<%= produto.id_produto %>" class="btn-voltar">Voltar ao produto</a>
+    </nav>
+
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>
