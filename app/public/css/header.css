@@ -121,14 +121,48 @@ header {
   width: 100%;
 }
 
+.search-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
 /* Busca e ações ocupam largura total no mobile */
 .search-form {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  width: auto;
   max-width: 100%;
   margin-top: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-actions .search-form {
+  flex-direction: row !important;
+  width: auto !important;
+}
+
+.header-actions .search-form input,
+.header-actions .search-form button {
+  width: auto !important;
+}
+
+.header-actions .search-form button {
+  flex: 0 0 auto;
+  min-width: 38px;
+}
+
+.search-actions .login-btn {
+  width: auto !important;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .search-form input {

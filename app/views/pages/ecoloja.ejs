@@ -1,149 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ecogeneration</title>
-    <link rel="stylesheet" href="/css/ecoloja.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="apple-touch-icon" href="/imagens/favicon2.png">
-    <link rel="icon" href="/imagens/favicon2.png" type="image/png">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoLoja — EcoGeneration</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/ecoloja.css">
+  <link rel="apple-touch-icon" href="/imagens/favicon2.png">
+  <link rel="icon" href="/imagens/favicon2.png" type="image/png">
+</head>
+<body>
   <%- include("../partials/header") %>
 
-  <main class="conteudo">
-    <p class="eco_loja">
-      <b class="eco">ECO</b><b class="loja">LOJA</b>
-    </p>
-   <section class="carousel" aria-label="Galeria de imagens" role="region" aria-roledescription="carousel">
-    <ul class="carousel-track" aria-live="polite">
-        <li class="carousel-slide current">
-            <a href="/entrada">
-                <img src="imagens/entradaa.svg" alt="Entrada da loja" class="carousel-img">
-            </a>
-        </li>
-        <li class="carousel-slide">
-            <a href="/medio">
-                <img src="imagens/INTER.svg" alt="Imagem institucional" class="carousel-img">
-            </a>
-        </li>
-        <li class="carousel-slide">
-            <a href="/avancado">
-                <img src="imagens/ITENS AVANÇADOS.svg" alt="Itens avançados" class="carousel-img">
-            </a>
-        </li>
-    </ul>
-        <!-- Removidos botões de navegação para um visual mais limpo. A
-          navegação passa a ser feita apenas pelos indicadores (bolinhas). -->
-        <ol class="carousel-nav" aria-hidden="false"></ol>
-</section>
-    <script src="/js/carousel.js" defer></script>
-    <section aria-labelledby="produtos-destaque">
-      <h2 id="produtos-destaque">Economia de energia</h2>
+  <main class="ecoloja-container">
 
-      <!-- Grid: Economia de energia -->
-      <section class="produtos-grid" role="list" aria-label="Produtos para economia de energia">
-        <article class="produto-card" role="listitem">
-          <figure>
-            <img src="imagens/lampadaled.png" alt="Lâmpada LED" class="produto-img">
-            <figcaption class="visually-hidden">Lâmpada LED</figcaption>
-          </figure>
-          <h3>Lâmpada LED</h3>
-          <p class="produto-preco">R$ 19,90</p>
-          <a class="btn-comprar" href="/produto/lampada-led" role="button">Comprar</a>
-        </article>
-
-        <article class="produto-card" role="listitem">
-          <figure>
-            <img src="imagens/powerbankportatil.png" alt="Carregador USB solar" class="produto-img">
-            <figcaption class="visually-hidden">Carregador USB solar</figcaption>
-          </figure>
-          <h3>Carregador USB</h3>
-          <p class="produto-preco">R$ 89,90</p>
-          <a class="btn-comprar" href="/produto/carregador-usb" role="button">Comprar</a>
-        </article>
-
-        <article class="produto-card" role="listitem">
-          <figure>
-            <img src="imagens/luminariasolar.png" alt="Luminária Solar" class="produto-img">
-            <figcaption class="visually-hidden">Luminária Solar</figcaption>
-          </figure>
-          <h3>Luminária Solar</h3>
-          <p class="produto-preco">R$ 149,90</p>
-          <a class="btn-comprar" href="/produto/luminaria-solar" role="button">Comprar</a>
-        </article>
-
-        <article class="produto-card" role="listitem">
-          <figure>
-            <img src="imagens/minipainel.png" alt="Mini Painel Solar" class="produto-img">
-            <figcaption class="visually-hidden">Mini Painel Solar</figcaption>
-          </figure>
-          <h3>Painel Solar (pequeno)</h3>
-          <p class="produto-preco">R$ 249,90</p>
-          <a class="btn-comprar" href="/produto/painel-solar" role="button">Comprar</a>
-        </article>
-      </section>
-
-      <section aria-labelledby="Autonomia">
-        <h4 id="Autonomia">Autonomia</h4>
-
-        <!-- Grid: Autonomia -->
-        <section class="produtos-grid" role="list" aria-label="Produtos para autonomia">
-          <article class="produto-card" role="listitem">
-            <figure>
-              <img src="imagens/carregadoraluzsolar.png" alt="Powerbank Solar" class="produto-img">
-              <figcaption class="visually-hidden">Powerbank Solar</figcaption>
-            </figure>
-            <h3>Powerbank Solar</h3>
-            <p class="produto-preco">R$ 129,90</p>
-            <a class="btn-comprar" href="/produto/powerbank-solar" role="button">Comprar</a>
-          </article>
-
-          <article class="produto-card" role="listitem">
-            <figure>
-              <img src="imagens/ventilador.png" alt="Ventilador Solar" class="produto-img">
-              <figcaption class="visually-hidden">Ventilador Solar</figcaption>
-            </figure>
-            <h3>Ventilador Solar</h3>
-            <p class="produto-preco">R$ 199,90</p>
-            <a class="btn-comprar" href="/produto/ventilador-solar" role="button">Comprar</a>
-          </article>
-
-          <article class="produto-card" role="listitem">
-            <figure>
-              <img src="imagens/estação.png" alt="Bateria Portátil" class="produto-img">
-              <figcaption class="visually-hidden">Estação de energia solar</figcaption>
-            </figure>
-            <h3>Estação de energia solar</h3>
-            <p class="produto-preco">R$ 349,90</p>
-            <a class="btn-comprar" href="/produto/bateria-portatil" role="button">Comprar</a>
-          </article>
-
-          <article class="produto-card" role="listitem">
-            <figure>
-              <img src="imagens/kit.png" alt="Inversor portátil" class="produto-img">
-              <figcaption class="visually-hidden">Kit energia solar portátil</figcaption>
-            </figure>
-            <h3>Kit energia solar portátil</h3>
-            <p class="produto-preco">R$ 399,90</p>
-            <a class="btn-comprar" href="/produto/inversor-portatil" role="button">Comprar</a>
-          </article>
-        </section>
-      </section>
+    <section class="ecoloja-header">
+      <h1>Produtos em Destaque</h1>
+      <p>Conheça nossas soluções mais populares</p>
     </section>
+
+    <section class="produtos-grid" aria-label="Lista de produtos">
+      <% if (produtos && produtos.length > 0) { %>
+        <% produtos.forEach(function(produto) { %>
+          <article class="produto-card">
+            <header class="produto-categoria">
+              <span><%= produto.categoria_produto %></span>
+            </header>
+            <% 
+              let imagemProduto = '/imagens/favicon2.png';
+              switch (produto.categoria_produto) {
+                case 'iluminacao':
+                  imagemProduto = '/imagens/lampada.png';
+                  break;
+                case 'ventilacao':
+                  imagemProduto = '/imagens/ventilador.png';
+                  break;
+                case 'energia':
+                  imagemProduto = '/imagens/dobravel.png';
+                  break;
+                case 'kit':
+                  imagemProduto = '/imagens/kit.png';
+                  break;
+                default:
+                  imagemProduto = '/imagens/favicon2.png';
+              }
+            %>
+            <figure class="produto-figura">
+             <img src="/imagens/<%= produto.imagem_produto %>" alt="<%= produto.nome_produto %>" class="produto-img">
+            </figure>
+            <section class="produto-info">
+              <h2 class="produto-nome"><%= produto.nome_produto %></h2>
+              <p class="produto-desc"><%= produto.descricao_produto %></p>
+              <footer class="produto-rodape">
+                <strong class="produto-preco">R$ <%= produto.preco_produto %></strong>
+                <a href="/produto/<%= produto.id_produto %>" class="btn-comprar">Ver produto</a>
+              </footer>
+            </section>
+          </article>
+        <% }) %>
+      <% } else { %>
+        <p class="sem-produtos">Nenhum produto encontrado.</p>
+      <% } %>
+    </section>
+
   </main>
 
   <%- include("../partials/footer") %>
 </body>
-    </html>
-
-
-
-
-
-
-
-
-
+</html>

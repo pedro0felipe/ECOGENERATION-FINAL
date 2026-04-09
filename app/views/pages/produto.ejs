@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= produto.nome_produto %> — EcoGeneration</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/produto.css">
+  <link rel="icon" href="/imagens/favicon2.png" type="image/png">
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="produto-container">
+
+    <nav class="produto-breadcrumb" aria-label="Navegação">
+      <a href="/">Início</a>
+      <span>›</span>
+      <a href="/ecoloja">EcoLoja</a>
+      <span>›</span>
+      <span><%= produto.nome_produto %></span>
+    </nav>
+
+    <article class="produto-detalhe">
+
+      <figure class="produto-detalhe-img">
+        <img src="/imagens/<%= produto.imagem_produto %>" alt="<%= produto.nome_produto %>">
+      </figure>
+
+      <section class="produto-detalhe-info">
+
+        <header>
+          <span class="produto-detalhe-categoria"><%= produto.categoria_produto %></span>
+          <h1><%= produto.nome_produto %></h1>
+        </header>
+
+        <p class="produto-detalhe-preco">R$ <%= produto.preco_produto %></p>
+
+        <p class="produto-detalhe-descricao"><%= produto.descricao_produto %></p>
+
+        <section class="produto-estoque">
+          <% if (produto.estoque_produto > 0) { %>
+            <span class="badge-estoque disponivel">✓ Em estoque (<%= produto.estoque_produto %> unidades)</span>
+          <% } else { %>
+            <span class="badge-estoque indisponivel">✗ Fora de estoque</span>
+          <% } %>
+        </section>
+
+        <nav class="produto-detalhe-acoes">
+          <% if (produto.estoque_produto > 0) { %>
+            <a href="/confirmar-compra/<%= produto.id_produto %>" class="btn-comprar-detalhe">
+              Comprar agora
+            </a>
+          <% } else { %>
+            <button class="btn-comprar-detalhe disabled" disabled>Indisponível</button>
+          <% } %>
+          <a href="/ecoloja" class="btn-voltar-loja">← Voltar à loja</a>
+        </nav>
+
+      </section>
+
+    </article>
+
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

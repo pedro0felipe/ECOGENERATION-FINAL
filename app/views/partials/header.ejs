@@ -2,8 +2,7 @@
   <section class="header-container">
     <figure class="logo-figure">
       <a href="/">
-        <!-- caminho absoluto e nome sem espaços -->
-        <img src="imagens/GENERATIONN.svg" alt="EcoGeneration Logo" class="logo">
+        <img src="/imagens/GENERATIONN.svg" alt="EcoGeneration Logo" class="logo">
       </a>
     </figure>
 
@@ -14,23 +13,44 @@
     <section class="header-actions">
       <nav class="nav-categorias" id="nav-categorias">
         <ul>
-          <li class="<%= currentPath === '/categoria/energia' ? 'active' : '' %>"><a href="/categoria/energia">Autonomia</a></li>
-          <li class="<%= currentPath === '/sobre-nos' ? 'active' : '' %>"><a href="/sobre-nos">Sobre Nós</a></li>
-          <li class="<%= currentPath === '/login' ? 'active' : '' %>"><a href="/login">Login</a></li>
+          <li class="<%= currentPath === '/ecoloja' ? 'active' : '' %>">
+            <a href="/ecoloja">Loja</a>
+          </li>
+          <li class="<%= currentPath === '/diagnostico' ? 'active' : '' %>">
+            <a href="/diagnostico">Diagnóstico</a>
+          </li>
+          <li class="<%= currentPath === '/sobre-nos' ? 'active' : '' %>">
+            <a href="/sobre-nos">Sobre</a>
+          </li>
+          <% if (typeof usuarioLogado !== 'undefined' && usuarioLogado) { %>
+            <li>
+              <a href="/logout">Sair</a>
+            </li>
+          <% } else { %>        
+            <li class="<%= currentPath === '/cadastro' ? 'active' : '' %>">
+              <a href="/cadastro">Cadastrar</a>
+            </li>
+          <% } %>
         </ul>
       </nav>
 
-      <form action="/search" method="get" class="search-form">
-        <input type="text" name="q" placeholder="Pesquisar..." />
-        <button type="submit" class="search-btn" aria-label="Pesquisar">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </button>
-      </form>
+      <div class="search-actions">
+        <form action="/search" method="get" class="search-form">
+          <input type="text" name="q" placeholder="Pesquisar..." />
+          <button type="submit" class="search-btn" aria-label="Pesquisar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+        </form>
+        <a href="<%= typeof usuarioLogado !== 'undefined' && usuarioLogado ? '/perfil' : '/login' %>" class="login-btn login-header-btn">
+          <%= typeof usuarioLogado !== 'undefined' && usuarioLogado ? 'Olá, ' + (usuarioNome ? usuarioNome.split(' ')[0] : 'Usuário') : 'Entrar' %>
+        </a>
+      </div>
     </section>
   </section>
+  
 </header>
 
 <script>
