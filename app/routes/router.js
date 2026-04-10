@@ -310,7 +310,7 @@ router.get("/ecoflow", (req, res) => res.render("ecoflow", { titulo: "Ecoflow Ri
 router.get("/esttacao", (req, res) => res.render("esttacao", { titulo: "Estação Solar" }));
 router.get("/placamil", (req, res) => res.render("placamil", { titulo: "Kit Painel Solar Ecoflow" }));
 router.get("/luminaria", (req, res) => res.render("luminaria", { titulo: "Luminária" }));
-router.get("/calculadora-tela-inicial", (req, res) => res.render("calculadora-tela-inicial", { titulo: "Calculadora" }));
+router.get("/calculadora-tela-inicial", (req, res) => res.render("diagnosticotela-inicial", { titulo: "Diagnóstico" }));
 router.get("/calculadora-perguntas", (req, res) => res.render("calculadora-perguntas", { titulo: "EcoCalculadora" }));
 
 // ===== ROTAS DE ADMIN =====
