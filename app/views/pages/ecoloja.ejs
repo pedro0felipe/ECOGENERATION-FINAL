@@ -24,11 +24,11 @@
       <% if (produtos && produtos.length > 0) { %>
         <% produtos.forEach(function(produto) { %>
           <article class="produto-card">
-            <header class="produto-categoria">
-              <span><%= produto.categoria_produto %></span>
+            <header class="produto-categoria <%= produto.categoria_produto %>">
+              <span><%= produto.categoria_produto === 'entrada' ? 'Entrada' : produto.categoria_produto === 'medio' ? 'Médio' : produto.categoria_produto === 'avancado' ? 'Avançado' : produto.categoria_produto %></span>
             </header>
             <% 
-              let imagemProduto = '/imagens/favicon2.png';
+           
               switch (produto.categoria_produto) {
                 case 'iluminacao':
                   imagemProduto = '/imagens/lampada.png';

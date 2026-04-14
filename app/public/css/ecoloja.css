@@ -63,8 +63,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(86, 154, 74, 0.12);
-  color: #316b33;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -75,13 +73,36 @@
   width: fit-content;
 }
 
+.produto-categoria.entrada {
+  background: rgba(34, 197, 94, 0.22);
+  color: #166534;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+}
+
+.produto-categoria.medio {
+  background: rgba(59, 130, 246, 0.22);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.45);
+}
+
+.produto-categoria.avancado {
+  background: rgba(255, 238, 0, 0.281);
+  color: #d69d00;
+  border: 1px solid rgba(238, 255, 0, 0.45);
+}
+
+.produto-categoria span {
+  display: inline-flex;
+  align-items: center;
+}
+
 .produto-figura {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.25rem;
   min-height: 180px;
-  background: #f9fdf6;
+  background: #ffffff;
 }
 
 .produto-img {
