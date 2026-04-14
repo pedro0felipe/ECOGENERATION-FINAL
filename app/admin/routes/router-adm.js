@@ -3,7 +3,7 @@ const router = express.Router();
 const adminAuth = require('../middleware/auth');
 const { adminModel } = require('../../models/adminModel');
 
-// ===== LOGIN ADMIN =====
+// LOGIN ADMIN 
 router.get('/admin-login', (req, res) => {
   res.render('admin-login', { titulo: 'Login Admin', erro: '' });
 });
@@ -25,13 +25,13 @@ router.post('/admin-login', (req, res) => {
   }
 });
 
-// ===== LOGOUT ADMIN =====
+//LOGOUT ADMIN 
 router.get('/admin-logout', (req, res) => {
   req.session.adminLoggedIn = false;
   res.redirect('/');
 });
 
-// ===== DASHBOARD =====
+//dashboard  
 router.get('/admin', adminAuth, async (req, res) => {
   try {
     const totalUsuarios = await adminModel.countUsuarios();

@@ -62,7 +62,7 @@
 .produto-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@
 }
 
 .produto-categoria span {
-  color: #2e7d32;
+
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;

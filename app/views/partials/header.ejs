@@ -34,7 +34,7 @@
         </ul>
       </nav>
 
-      <div class="search-actions">
+      <section class="search-actions">
         <form action="/search" method="get" class="search-form">
           <input type="text" name="q" placeholder="Pesquisar..." />
           <button type="submit" class="search-btn" aria-label="Pesquisar">
@@ -47,7 +47,7 @@
         <a href="<%= typeof usuarioLogado !== 'undefined' && usuarioLogado ? '/perfil' : '/login' %>" class="login-btn login-header-btn">
           <%= typeof usuarioLogado !== 'undefined' && usuarioLogado ? 'Olá, ' + (usuarioNome ? usuarioNome.split(' ')[0] : 'Usuário') : 'Entrar' %>
         </a>
-      </div>
+      </section>
     </section>
   </section>
   
