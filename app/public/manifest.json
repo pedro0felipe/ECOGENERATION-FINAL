@@ -1,0 +1,22 @@
+{
+  "name": "EcoGeneration",
+  "short_name": "EcoGen",
+  "description": "Descubra seu nível de autonomia energética e encontre a solução solar ideal para você.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2e7d32",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/imagens/favicon2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/imagens/favicon2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
