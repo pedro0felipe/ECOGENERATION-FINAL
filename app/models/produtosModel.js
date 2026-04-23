@@ -25,12 +25,15 @@ const produtosModel = {
         }
     },
 
-    findByCategoria: async (categoria) => {
+    findByCategoria: async (categoria, limit = null) => {
         try {
-            const [resultado] = await pool.query(
-                "SELECT * FROM produtos WHERE categoria_produto = ? AND status_produto = 1 LIMIT 3",
-                [categoria]
-            );
+            let query = "SELECT * FROM produtos WHERE categoria_produto = ? AND status_produto = 1";
+            const params = [categoria];
+            if (limit && Number.isInteger(limit)) {
+                query += " LIMIT ?";
+                params.push(limit);
+            }
+            const [resultado] = await pool.query(query, params);
             return resultado;
         } catch (erro) {
             return erro;
