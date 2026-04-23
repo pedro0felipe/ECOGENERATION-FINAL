@@ -25,8 +25,31 @@ router.get("/", function (req, res) {
 // ===== ECOLOJA =====
 router.get("/ecoloja", async function (req, res) {
     try {
-        const produtos = await produtosModel.findAll();
-        res.render("ecoloja", { titulo: "EcoLoja", produtos: produtos });
+        const page = parseInt(req.query.page, 10) || 1;
+        const categorias = {
+            1: 'entrada',
+            2: 'medio',
+            3: 'avancado'
+        };
+        const titulos = {
+            1: 'Entrada',
+            2: 'Médio',
+            3: 'Avançado'
+        };
+
+        const currentPage = page >= 1 && page <= 3 ? page : 1;
+        const categoria = categorias[currentPage];
+        const tituloPagina = titulos[currentPage];
+        const produtos = await produtosModel.findByCategoria(categoria);
+
+        res.render("ecoloja", {
+            titulo: "EcoLoja",
+            produtos: produtos,
+            currentPage,
+            totalPages: 3,
+            categoriaPagina: categoria,
+            tituloCategoria: tituloPagina
+        });
     } catch (erro) {
         console.log(erro);
     }

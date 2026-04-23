@@ -20,6 +20,10 @@
       <p>Conheça nossas soluções mais populares</p>
     </section>
 
+    <section class="ecoloja-categoria-titulo">
+      <h2><%= tituloCategoria %></h2>
+    </section>
+
     <section class="produtos-grid" aria-label="Lista de produtos">
       <% if (produtos && produtos.length > 0) { %>
         <% produtos.forEach(function(produto) { %>
@@ -64,6 +68,11 @@
       <% } %>
     </section>
 
+    <section class="ecoloja-paginacao">
+      <a href="/ecoloja?page=1" class="pagina-link <%= currentPage === 1 ? 'ativo' : '' %>">1 </a>
+      <a href="/ecoloja?page=2" class="pagina-link <%= currentPage === 2 ? 'ativo' : '' %>">2 </a>
+      <a href="/ecoloja?page=3" class="pagina-link <%= currentPage === 3 ? 'ativo' : '' %>">3 </a>
+    </section>
   </main>
 
   <%- include("../partials/footer") %>
