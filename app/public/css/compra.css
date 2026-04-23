@@ -74,6 +74,12 @@
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .compra-preco {
